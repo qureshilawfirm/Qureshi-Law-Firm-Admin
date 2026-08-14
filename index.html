@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
 
 <title>Qureshi Law Firm | Admin Panel</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -20,7 +26,10 @@ body{
     color:#111;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
     font:inherit;
 }
 
@@ -28,299 +37,480 @@ button{
     cursor:pointer;
 }
 
-/* LOGIN */
+/* ================= LOGIN ================= */
 
 .auth-page{
+
     min-height:100vh;
+
     background:#050505;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     padding:20px;
 }
 
 .auth-box{
+
     width:100%;
+
     max-width:580px;
+
     background:white;
+
     padding:42px;
+
     box-shadow:0 10px 40px rgba(0,0,0,.5);
 }
 
 .logo-title{
+
     font-family:Georgia,serif;
+
     font-size:48px;
+
     line-height:1.05;
+
     font-weight:bold;
+
     margin:0;
 }
 
 .subtitle{
+
     margin-top:15px;
+
     color:#777;
+
     letter-spacing:5px;
+
     font-size:14px;
 }
 
 .form-group{
+
     margin-top:24px;
 }
 
 .form-group label{
+
     display:block;
+
     margin-bottom:8px;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
+
     width:100%;
+
     padding:15px;
+
     border:1px solid #ccc;
+
     outline:none;
+
     background:#fff;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
+
     border-color:#111;
 }
 
 .main-btn{
+
     width:100%;
+
     padding:16px;
+
     border:0;
+
     background:#222;
+
     color:white;
+
     margin-top:25px;
 }
 
 .main-btn:hover{
+
     background:#000;
 }
 
 .secondary-btn{
+
     padding:12px 18px;
+
     background:white;
+
     border:1px solid #222;
 }
 
 .link-btn{
+
     background:none;
+
     border:0;
+
     text-decoration:underline;
+
     margin-top:18px;
 }
 
 .message{
+
     padding:13px;
+
     margin-top:20px;
+
     display:none;
+
     line-height:1.5;
 }
 
 .error{
+
     background:#fdeaea;
+
     color:#9d1717;
 }
 
 .success{
+
     background:#e8f7ed;
+
     color:#126b38;
 }
 
-/* APP */
+/* ================= APP ================= */
 
 #app{
+
     display:none;
+
     min-height:100vh;
 }
 
 .topbar{
+
     height:72px;
+
     background:#050505;
+
     color:white;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     padding:0 25px;
 }
 
 .brand{
+
     font-family:Georgia,serif;
+
     font-size:28px;
 }
 
 .brand small{
+
     font-family:Arial;
+
     font-size:14px;
+
     letter-spacing:2px;
+
     color:#aaa;
+
     margin-left:8px;
 }
 
 .logout{
+
     background:white;
+
     color:#111;
+
     border:0;
+
     padding:13px 22px;
 }
 
 .menu-button{
+
     display:none;
+
     background:#111;
+
     color:white;
+
     border:0;
+
     padding:12px 18px;
+
     margin:25px;
 }
 
 .layout{
+
     display:flex;
 }
 
 .sidebar{
+
     width:270px;
+
     min-height:calc(100vh - 72px);
+
     background:#080808;
+
     color:white;
+
     padding:25px 20px;
 }
 
 .nav-item{
+
     display:block;
+
     width:100%;
+
     padding:16px 15px;
+
     margin-bottom:6px;
+
     border:0;
+
     background:transparent;
+
     color:#ddd;
+
     text-align:left;
+
     font-size:17px;
 }
 
 .nav-item:hover,
 .nav-item.active{
+
     background:#222;
+
     color:white;
 }
 
 .content{
+
     flex:1;
+
     padding:35px;
+
     overflow-x:auto;
 }
 
 .page-title{
+
     font-family:Georgia,serif;
+
     font-size:38px;
+
     margin:0 0 30px;
 }
 
-/* DASHBOARD */
+/* ================= DASHBOARD ================= */
 
 .stats{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:25px;
 }
 
 .stat{
+
     background:white;
+
     border:1px solid #ddd;
+
     padding:35px;
 }
 
 .stat-number{
+
     font-family:Georgia,serif;
+
     font-size:55px;
 }
 
 .stat-title{
+
     color:#777;
+
     letter-spacing:2px;
+
     margin-top:10px;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 
 .card{
+
     background:white;
+
     border:1px solid #ddd;
+
     padding:25px;
+
     margin-bottom:25px;
 }
 
 .table-wrap{
+
     overflow-x:auto;
 }
 
 table{
+
     width:100%;
+
     border-collapse:collapse;
+
     background:white;
 }
 
-th,td{
+th,
+td{
+
     padding:14px;
+
     border-bottom:1px solid #ddd;
+
     text-align:left;
 }
 
 th{
+
     background:#111;
+
     color:white;
 }
 
 .action{
+
     border:1px solid #222;
+
     background:white;
+
     padding:7px 12px;
+
     margin-right:5px;
 }
 
 .delete{
+
     color:#a00000;
 }
 
-/* MODAL */
+.open-document{
+
+    color:#0645ad;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+    border:0;
+
+    background:none;
+
+    padding:7px 0;
+}
+
+/* ================= MODAL ================= */
 
 .modal{
+
     display:none;
+
     position:fixed;
+
     inset:0;
+
     background:rgba(0,0,0,.65);
+
     align-items:center;
+
     justify-content:center;
+
     padding:20px;
+
     z-index:100;
 }
 
 .modal-box{
+
     width:100%;
+
     max-width:600px;
+
     max-height:90vh;
+
     overflow-y:auto;
+
     background:white;
+
     padding:30px;
 }
 
 .modal-head{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
 .close{
+
     border:0;
+
     background:none;
+
     font-size:28px;
 }
+
+/* ================= FILE INFO ================= */
+
+.file-info{
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    color:#666;
+
+    line-height:1.5;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
     .stats{
+
         grid-template-columns:repeat(2,1fr);
     }
 
@@ -329,72 +519,95 @@ th{
 @media(max-width:700px){
 
     .topbar{
+
         height:62px;
+
         padding:0 15px;
     }
 
     .brand{
+
         font-size:21px;
     }
 
     .brand small{
+
         font-size:10px;
     }
 
     .logout{
+
         padding:9px 12px;
     }
 
     .menu-button{
+
         display:block;
     }
 
     .sidebar{
+
         display:none;
+
         position:absolute;
+
         z-index:50;
+
         width:280px;
+
         min-height:calc(100vh - 62px);
     }
 
     .sidebar.open{
+
         display:block;
     }
 
     .content{
+
         padding:20px;
     }
 
     .page-title{
+
         font-size:32px;
     }
 
     .stats{
+
         grid-template-columns:1fr;
     }
 
     .auth-box{
+
         padding:28px 22px;
     }
 
     .logo-title{
+
         font-size:38px;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 
-<!-- ================= LOGIN ================= -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <section id="loginPage" class="auth-page">
 
 <div class="auth-box">
 
 <h1 class="logo-title">
-Qureshi Law<br>Firm
+Qureshi Law<br>
+Firm
 </h1>
 
 <div class="subtitle">
@@ -404,25 +617,35 @@ ADMINISTRATION PANEL
 <form id="loginForm">
 
 <div class="form-group">
+
 <label>Email</label>
+
 <input
 id="loginEmail"
 type="email"
 placeholder="Enter email"
 required>
+
 </div>
 
 <div class="form-group">
+
 <label>Password</label>
+
 <input
 id="loginPassword"
 type="password"
 placeholder="Enter password"
 required>
+
 </div>
 
-<button class="main-btn" type="submit">
+<button
+class="main-btn"
+type="submit">
+
 LOGIN TO ADMIN PANEL
+
 </button>
 
 </form>
@@ -430,23 +653,35 @@ LOGIN TO ADMIN PANEL
 <button
 class="link-btn"
 onclick="showForgot()">
+
 Forgot Password?
+
 </button>
 
-<div id="loginMessage" class="message"></div>
+<div
+id="loginMessage"
+class="message">
+</div>
 
 </div>
+
 </section>
 
 
-<!-- ================= FORGOT PASSWORD ================= -->
+<!-- =====================================================
+     FORGOT PASSWORD
+===================================================== -->
 
-<section id="forgotPage" class="auth-page" style="display:none">
+<section
+id="forgotPage"
+class="auth-page"
+style="display:none">
 
 <div class="auth-box">
 
 <h1 class="logo-title">
-Qureshi Law<br>Firm
+Qureshi Law<br>
+Firm
 </h1>
 
 <div class="subtitle">
@@ -456,6 +691,7 @@ PASSWORD RECOVERY
 <form id="forgotForm">
 
 <div class="form-group">
+
 <label>Email</label>
 
 <input
@@ -469,7 +705,9 @@ required>
 <button
 class="main-btn"
 type="submit">
+
 SEND RECOVERY EMAIL
+
 </button>
 
 </form>
@@ -477,24 +715,35 @@ SEND RECOVERY EMAIL
 <button
 class="link-btn"
 onclick="showLogin()">
+
 Back to Login
+
 </button>
 
-<div id="forgotMessage" class="message"></div>
+<div
+id="forgotMessage"
+class="message">
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= RESET PASSWORD ================= -->
+<!-- =====================================================
+     RESET PASSWORD
+===================================================== -->
 
-<section id="resetPage" class="auth-page" style="display:none">
+<section
+id="resetPage"
+class="auth-page"
+style="display:none">
 
 <div class="auth-box">
 
 <h1 class="logo-title">
-Qureshi Law<br>Firm
+Qureshi Law<br>
+Firm
 </h1>
 
 <div class="subtitle">
@@ -532,89 +781,134 @@ required>
 <button
 class="main-btn"
 type="submit">
+
 SET NEW PASSWORD
+
 </button>
 
 </form>
 
-<div id="resetMessage" class="message"></div>
+<div
+id="resetMessage"
+class="message">
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= ADMIN APP ================= -->
+<!-- =====================================================
+     ADMIN APP
+===================================================== -->
 
 <div id="app">
 
 <header class="topbar">
 
 <div class="brand">
+
 Qureshi Law Firm
-<small>ADMIN PANEL</small>
+
+<small>
+ADMIN PANEL
+</small>
+
 </div>
 
 <button
 class="logout"
 onclick="logout()">
+
 LOGOUT
+
 </button>
 
 </header>
 
+
 <button
 class="menu-button"
 onclick="toggleMenu()">
+
 ☰ MENU
+
 </button>
+
 
 <div class="layout">
 
-<aside id="sidebar" class="sidebar">
+
+<aside
+id="sidebar"
+class="sidebar">
+
 
 <button
 class="nav-item active"
 onclick="showPage('dashboard',this)">
+
 📊 Dashboard
+
 </button>
+
 
 <button
 class="nav-item"
 onclick="showPage('clients',this)">
+
 👥 Clients
+
 </button>
+
 
 <button
 class="nav-item"
 onclick="showPage('cases',this)">
+
 ⚖️ Cases
+
 </button>
+
 
 <button
 class="nav-item"
 onclick="showPage('appointments',this)">
+
 📅 Appointments
+
 </button>
+
 
 <button
 class="nav-item"
 onclick="showPage('consultations',this)">
+
 💬 Consultations
+
 </button>
+
 
 <button
 class="nav-item"
 onclick="showPage('documents',this)">
+
 📁 Documents
+
 </button>
+
 
 </aside>
 
 
-<main id="content" class="content">
+<main
+id="content"
+class="content">
 
-<!-- DASHBOARD -->
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
 
 <section id="dashboardPage">
 
@@ -628,34 +922,87 @@ Welcome to Qureshi Law Firm Administration Panel.
 
 <div class="stats">
 
-<div class="stat">
-<div id="clientCount" class="stat-number">0</div>
-<div class="stat-title">CLIENTS</div>
-</div>
 
 <div class="stat">
-<div id="caseCount" class="stat-number">0</div>
-<div class="stat-title">CASES</div>
+
+<div
+id="clientCount"
+class="stat-number">
+
+0
+
 </div>
 
-<div class="stat">
-<div id="appointmentCount" class="stat-number">0</div>
-<div class="stat-title">APPOINTMENTS</div>
+<div class="stat-title">
+CLIENTS
 </div>
 
-<div class="stat">
-<div id="consultationCount" class="stat-number">0</div>
-<div class="stat-title">CONSULTATIONS</div>
 </div>
+
+
+<div class="stat">
+
+<div
+id="caseCount"
+class="stat-number">
+
+0
+
+</div>
+
+<div class="stat-title">
+CASES
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div
+id="appointmentCount"
+class="stat-number">
+
+0
+
+</div>
+
+<div class="stat-title">
+APPOINTMENTS
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div
+id="consultationCount"
+class="stat-number">
+
+0
+
+</div>
+
+<div class="stat-title">
+CONSULTATIONS
+</div>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- CLIENTS -->
+<!-- =====================================================
+     CLIENTS
+===================================================== -->
 
-<section id="clientsPage" style="display:none">
+<section
+id="clientsPage"
+style="display:none">
 
 <h1 class="page-title">
 Clients
@@ -667,25 +1014,36 @@ Clients
 class="main-btn"
 style="max-width:220px;margin-top:0"
 onclick="openModal('client')">
+
 + ADD CLIENT
+
 </button>
 
 </div>
+
 
 <div class="card table-wrap">
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Name</th>
+
 <th>Phone</th>
+
 <th>Email</th>
+
 <th>Actions</th>
+
 </tr>
+
 </thead>
 
-<tbody id="clientsTable"></tbody>
+<tbody id="clientsTable">
+</tbody>
 
 </table>
 
@@ -694,9 +1052,13 @@ onclick="openModal('client')">
 </section>
 
 
-<!-- CASES -->
+<!-- =====================================================
+     CASES
+===================================================== -->
 
-<section id="casesPage" style="display:none">
+<section
+id="casesPage"
+style="display:none">
 
 <h1 class="page-title">
 Cases
@@ -708,26 +1070,38 @@ Cases
 class="main-btn"
 style="max-width:220px;margin-top:0"
 onclick="openModal('case')">
+
 + ADD CASE
+
 </button>
 
 </div>
+
 
 <div class="card table-wrap">
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Case Title</th>
+
 <th>Case Number</th>
+
 <th>Client</th>
+
 <th>Status</th>
+
 <th>Actions</th>
+
 </tr>
+
 </thead>
 
-<tbody id="casesTable"></tbody>
+<tbody id="casesTable">
+</tbody>
 
 </table>
 
@@ -736,9 +1110,13 @@ onclick="openModal('case')">
 </section>
 
 
-<!-- APPOINTMENTS -->
+<!-- =====================================================
+     APPOINTMENTS
+===================================================== -->
 
-<section id="appointmentsPage" style="display:none">
+<section
+id="appointmentsPage"
+style="display:none">
 
 <h1 class="page-title">
 Appointments
@@ -750,26 +1128,38 @@ Appointments
 class="main-btn"
 style="max-width:250px;margin-top:0"
 onclick="openModal('appointment')">
+
 + ADD APPOINTMENT
+
 </button>
 
 </div>
+
 
 <div class="card table-wrap">
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Client</th>
+
 <th>Date</th>
+
 <th>Time</th>
+
 <th>Status</th>
+
 <th>Actions</th>
+
 </tr>
+
 </thead>
 
-<tbody id="appointmentsTable"></tbody>
+<tbody id="appointmentsTable">
+</tbody>
 
 </table>
 
@@ -778,9 +1168,13 @@ onclick="openModal('appointment')">
 </section>
 
 
-<!-- CONSULTATIONS -->
+<!-- =====================================================
+     CONSULTATIONS
+===================================================== -->
 
-<section id="consultationsPage" style="display:none">
+<section
+id="consultationsPage"
+style="display:none">
 
 <h1 class="page-title">
 Consultations
@@ -792,26 +1186,38 @@ Consultations
 class="main-btn"
 style="max-width:260px;margin-top:0"
 onclick="openModal('consultation')">
+
 + ADD CONSULTATION
+
 </button>
 
 </div>
+
 
 <div class="card table-wrap">
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Client</th>
+
 <th>Subject</th>
+
 <th>Date</th>
+
 <th>Status</th>
+
 <th>Actions</th>
+
 </tr>
+
 </thead>
 
-<tbody id="consultationsTable"></tbody>
+<tbody id="consultationsTable">
+</tbody>
 
 </table>
 
@@ -820,39 +1226,62 @@ onclick="openModal('consultation')">
 </section>
 
 
-<!-- DOCUMENTS -->
+<!-- =====================================================
+     DOCUMENTS
+===================================================== -->
 
-<section id="documentsPage" style="display:none">
+<section
+id="documentsPage"
+style="display:none">
 
 <h1 class="page-title">
 Documents
 </h1>
 
+
 <div class="card">
 
 <button
 class="main-btn"
-style="max-width:230px;margin-top:0"
+style="max-width:250px;margin-top:0"
 onclick="openModal('document')">
-+ ADD DOCUMENT
+
++ UPLOAD DOCUMENT
+
 </button>
 
+<p style="color:#777;margin-top:15px">
+
+Private legal documents are securely stored
+in Supabase Storage.
+
+</p>
+
 </div>
+
 
 <div class="card table-wrap">
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Document Name</th>
+
 <th>Client</th>
-<th>Document URL</th>
+
+<th>File</th>
+
 <th>Actions</th>
+
 </tr>
+
 </thead>
 
-<tbody id="documentsTable"></tbody>
+<tbody id="documentsTable">
+</tbody>
 
 </table>
 
@@ -860,14 +1289,21 @@ onclick="openModal('document')">
 
 </section>
 
+
 </main>
+
 </div>
+
 </div>
 
 
-<!-- ================= MODAL ================= -->
+<!-- =====================================================
+     MODAL
+===================================================== -->
 
-<div id="modal" class="modal">
+<div
+id="modal"
+class="modal">
 
 <div class="modal-box">
 
@@ -880,14 +1316,22 @@ Add
 <button
 class="close"
 onclick="closeModal()">
+
 ×
+
 </button>
 
 </div>
 
-<form id="modalForm"></form>
 
-<div id="modalMessage" class="message"></div>
+<form id="modalForm">
+</form>
+
+
+<div
+id="modalMessage"
+class="message">
+</div>
 
 </div>
 
@@ -898,17 +1342,11 @@ onclick="closeModal()">
 
 /* =====================================================
    SUPABASE CONFIGURATION
-   ===================================================== */
+===================================================== */
 
 const SUPABASE_URL =
 "https://qviauargicjxhpspgfib.supabase.co";
 
-/*
- IMPORTANT:
- Paste your existing SUPABASE ANON/PUBLISHABLE KEY here.
- DO NOT use database password.
- DO NOT use service_role key.
-*/
 
 const SUPABASE_ANON_KEY =
 "sb_publishable_GzATmim-fUkxFyMXYWFCXA_reB9bn4D";
@@ -916,14 +1354,33 @@ const SUPABASE_ANON_KEY =
 
 const supabaseClient =
 window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
+SUPABASE_URL,
+SUPABASE_ANON_KEY
 );
 
 
 /* =====================================================
-   PASSWORD RESET REDIRECT
-   ===================================================== */
+   STORAGE BUCKET
+===================================================== */
+
+/*
+ IMPORTANT:
+
+This must exactly match the bucket
+you created in Supabase.
+
+Your bucket:
+
+Legal documents
+*/
+
+const DOCUMENT_BUCKET =
+"Legal documents";
+
+
+/* =====================================================
+   RESET URL
+===================================================== */
 
 const RESET_URL =
 "https://qureshilawfirm.github.io/Qureshi-Law-Firm-Admin/";
@@ -931,7 +1388,7 @@ const RESET_URL =
 
 /* =====================================================
    BASIC ELEMENTS
-   ===================================================== */
+===================================================== */
 
 const loginPage =
 document.getElementById("loginPage");
@@ -948,13 +1405,16 @@ document.getElementById("app");
 
 /* =====================================================
    SHOW LOGIN
-   ===================================================== */
+===================================================== */
 
 function showLogin(){
 
 loginPage.style.display="flex";
+
 forgotPage.style.display="none";
+
 resetPage.style.display="none";
+
 app.style.display="none";
 
 }
@@ -962,13 +1422,16 @@ app.style.display="none";
 
 /* =====================================================
    SHOW FORGOT
-   ===================================================== */
+===================================================== */
 
 function showForgot(){
 
 loginPage.style.display="none";
+
 forgotPage.style.display="flex";
+
 resetPage.style.display="none";
+
 app.style.display="none";
 
 }
@@ -976,50 +1439,81 @@ app.style.display="none";
 
 /* =====================================================
    LOGIN
-   ===================================================== */
+===================================================== */
 
 document
 .getElementById("loginForm")
-.addEventListener("submit",async function(e){
+.addEventListener(
+"submit",
+async function(e){
 
 e.preventDefault();
 
+
 const email =
-document.getElementById("loginEmail").value.trim();
+document
+.getElementById("loginEmail")
+.value
+.trim();
+
 
 const password =
-document.getElementById("loginPassword").value;
+document
+.getElementById("loginPassword")
+.value;
+
 
 const message =
 document.getElementById("loginMessage");
 
-try{
-
-const {data,error} =
-await supabaseClient.auth.signInWithPassword({
-email:email,
-password:password
-});
-
-if(error){
-
-message.className="message error";
-message.style.display="block";
-message.textContent=
-"Login failed: "+error.message;
-
-return;
-}
 
 message.style.display="none";
 
+
+try{
+
+const {data,error} =
+await supabaseClient.auth
+.signInWithPassword({
+
+email:email,
+
+password:password
+
+});
+
+
+if(error){
+
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
+"Login failed: " +
+error.message;
+
+return;
+
+}
+
+
 showApp();
+
 
 }catch(err){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
+console.error(err);
+
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Login failed. Please try again.";
 
 }
@@ -1029,52 +1523,78 @@ message.textContent=
 
 /* =====================================================
    FORGOT PASSWORD
-   ===================================================== */
+===================================================== */
 
 document
 .getElementById("forgotForm")
-.addEventListener("submit",async function(e){
+.addEventListener(
+"submit",
+async function(e){
 
 e.preventDefault();
 
+
 const email =
-document.getElementById("forgotEmail").value.trim();
+document
+.getElementById("forgotEmail")
+.value
+.trim();
+
 
 const message =
 document.getElementById("forgotMessage");
 
+
 try{
 
 const {error} =
-await supabaseClient.auth.resetPasswordForEmail(
+await supabaseClient.auth
+.resetPasswordForEmail(
 email,
 {
-redirectTo:
-RESET_URL
+redirectTo:RESET_URL
 }
 );
 
+
 if(error){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
-"Failed to send recovery email: "+
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
+"Failed to send recovery email: " +
 error.message;
 
 return;
+
 }
 
-message.className="message success";
-message.style.display="block";
-message.textContent=
+
+message.className =
+"message success";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Recovery email sent. Please check your email.";
+
 
 }catch(err){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
+console.error(err);
+
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Unable to send recovery email.";
 
 }
@@ -1084,22 +1604,23 @@ message.textContent=
 
 /* =====================================================
    AUTH STATE
-   ===================================================== */
+===================================================== */
 
 supabaseClient.auth.onAuthStateChange(
 async function(event,session){
 
-console.log("Auth event:",event);
+console.log(
+"Auth event:",
+event
+);
 
 
-/*
- PASSWORD RECOVERY
-*/
-
-if(event==="PASSWORD_RECOVERY"){
+if(event === "PASSWORD_RECOVERY"){
 
 loginPage.style.display="none";
+
 forgotPage.style.display="none";
+
 app.style.display="none";
 
 resetPage.style.display="flex";
@@ -1109,13 +1630,9 @@ return;
 }
 
 
-/*
- NORMAL LOGIN
-*/
-
 if(
 session &&
-event==="SIGNED_IN"
+event === "SIGNED_IN"
 ){
 
 showApp();
@@ -1127,27 +1644,31 @@ showApp();
 
 /* =====================================================
    CHECK SESSION
-   ===================================================== */
+===================================================== */
 
 async function checkSession(){
 
 const {data} =
-await supabaseClient.auth.getSession();
+await supabaseClient.auth
+.getSession();
 
-const session=data.session;
+
+const session =
+data.session;
+
 
 if(session){
 
 showApp();
 
-}else{
+return;
 
-/*
- Check if this is a recovery URL.
-*/
+}
 
-const hash=
+
+const hash =
 window.location.hash;
+
 
 if(
 hash &&
@@ -1157,48 +1678,58 @@ hash.includes("access_token")
 )
 ){
 
-/*
- Supabase will trigger PASSWORD_RECOVERY.
-*/
-
 return;
 
 }
+
 
 showLogin();
 
 }
 
-}
 
 checkSession();
 
 
 /* =====================================================
    RESET PASSWORD
-   ===================================================== */
+===================================================== */
 
 document
 .getElementById("resetForm")
-.addEventListener("submit",async function(e){
+.addEventListener(
+"submit",
+async function(e){
 
 e.preventDefault();
 
+
 const password =
-document.getElementById("newPassword").value;
+document
+.getElementById("newPassword")
+.value;
+
 
 const confirm =
-document.getElementById("confirmPassword").value;
+document
+.getElementById("confirmPassword")
+.value;
+
 
 const message =
-document.getElementById("resetMessage");
+document
+.getElementById("resetMessage");
 
 
-if(password.length<8){
+if(password.length < 8){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Password must contain at least 8 characters.";
 
 return;
@@ -1206,11 +1737,15 @@ return;
 }
 
 
-if(password!==confirm){
+if(password !== confirm){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Passwords do not match.";
 
 return;
@@ -1221,17 +1756,22 @@ return;
 try{
 
 const {error} =
-await supabaseClient.auth.updateUser({
+await supabaseClient.auth
+.updateUser({
 password:password
 });
 
 
 if(error){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
-"Password update failed: "+
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
+"Password update failed: " +
 error.message;
 
 return;
@@ -1239,31 +1779,41 @@ return;
 }
 
 
-message.className="message success";
-message.style.display="block";
-message.textContent=
+message.className =
+"message success";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Password updated successfully. You can now login.";
 
 
-/*
- Sign out after password change.
-*/
+setTimeout(
+async function(){
 
-setTimeout(async function(){
+await supabaseClient.auth
+.signOut();
 
-await supabaseClient.auth.signOut();
-
-window.location.href=
+window.location.href =
 RESET_URL;
 
-},2500);
+},
+2500
+);
 
 
 }catch(err){
 
-message.className="message error";
-message.style.display="block";
-message.textContent=
+console.error(err);
+
+message.className =
+"message error";
+
+message.style.display =
+"block";
+
+message.textContent =
 "Password update failed.";
 
 }
@@ -1273,15 +1823,18 @@ message.textContent=
 
 /* =====================================================
    SHOW APP
-   ===================================================== */
+===================================================== */
 
 function showApp(){
 
 loginPage.style.display="none";
+
 forgotPage.style.display="none";
+
 resetPage.style.display="none";
 
 app.style.display="block";
+
 
 loadDashboard();
 
@@ -1290,7 +1843,7 @@ loadDashboard();
 
 /* =====================================================
    LOGOUT
-   ===================================================== */
+===================================================== */
 
 async function logout(){
 
@@ -1303,20 +1856,21 @@ showLogin();
 
 /* =====================================================
    MOBILE MENU
-   ===================================================== */
+===================================================== */
 
 function toggleMenu(){
 
 document
 .getElementById("sidebar")
-.classList.toggle("open");
+.classList
+.toggle("open");
 
 }
 
 
 /* =====================================================
    PAGE NAVIGATION
-   ===================================================== */
+===================================================== */
 
 function showPage(page,button){
 
@@ -1329,14 +1883,23 @@ const pages=[
 "documents"
 ];
 
-pages.forEach(function(p){
 
-const el=
-document.getElementById(p+"Page");
+pages.forEach(
+function(p){
+
+const el =
+document.getElementById(
+p+"Page"
+);
+
 
 if(el){
-el.style.display=
-p===page?"block":"none";
+
+el.style.display =
+p === page
+? "block"
+: "none";
+
 }
 
 });
@@ -1344,41 +1907,50 @@ p===page?"block":"none";
 
 document
 .querySelectorAll(".nav-item")
-.forEach(function(item){
+.forEach(
+function(item){
 
-item.classList.remove("active");
+item.classList
+.remove("active");
 
 });
 
 
 if(button){
 
-button.classList.add("active");
+button.classList
+.add("active");
 
 }
 
 
 document
 .getElementById("sidebar")
-.classList.remove("open");
+.classList
+.remove("open");
 
 
-if(page==="dashboard")
+if(page === "dashboard")
 loadDashboard();
 
-if(page==="clients")
+
+if(page === "clients")
 loadClients();
 
-if(page==="cases")
+
+if(page === "cases")
 loadCases();
 
-if(page==="appointments")
+
+if(page === "appointments")
 loadAppointments();
 
-if(page==="consultations")
+
+if(page === "consultations")
 loadConsultations();
 
-if(page==="documents")
+
+if(page === "documents")
 loadDocuments();
 
 }
@@ -1386,7 +1958,7 @@ loadDocuments();
 
 /* =====================================================
    COUNT
-   ===================================================== */
+===================================================== */
 
 async function getCount(table){
 
@@ -1395,18 +1967,33 @@ try{
 const {count,error} =
 await supabaseClient
 .from(table)
-.select("*",{count:"exact",head:true});
+.select(
+"*",
+{
+count:"exact",
+head:true
+}
+);
+
 
 if(error){
 
-console.log(table,error);
+console.log(
+table,
+error
+);
+
 return 0;
 
 }
 
+
 return count || 0;
 
+
 }catch(e){
+
+console.error(e);
 
 return 0;
 
@@ -1417,24 +2004,31 @@ return 0;
 
 /* =====================================================
    DASHBOARD
-   ===================================================== */
+===================================================== */
 
 async function loadDashboard(){
 
-document.getElementById("clientCount")
-.textContent=
+document
+.getElementById("clientCount")
+.textContent =
 await getCount("clients");
 
-document.getElementById("caseCount")
-.textContent=
+
+document
+.getElementById("caseCount")
+.textContent =
 await getCount("cases");
 
-document.getElementById("appointmentCount")
-.textContent=
+
+document
+.getElementById("appointmentCount")
+.textContent =
 await getCount("appointments");
 
-document.getElementById("consultationCount")
-.textContent=
+
+document
+.getElementById("consultationCount")
+.textContent =
 await getCount("consultations");
 
 }
@@ -1442,25 +2036,35 @@ await getCount("consultations");
 
 /* =====================================================
    CLIENTS
-   ===================================================== */
+===================================================== */
 
 async function loadClients(){
 
-const tbody=
-document.getElementById("clientsTable");
+const tbody =
+document.getElementById(
+"clientsTable"
+);
 
-tbody.innerHTML=
+
+tbody.innerHTML =
 "<tr><td colspan='4'>Loading...</td></tr>";
 
-const {data,error}=
+
+const {data,error} =
 await supabaseClient
 .from("clients")
 .select("*")
-.order("created_at",{ascending:false});
+.order(
+"created_at",
+{
+ascending:false
+}
+);
+
 
 if(error){
 
-tbody.innerHTML=
+tbody.innerHTML =
 "<tr><td colspan='4'>Unable to load clients.</td></tr>";
 
 console.log(error);
@@ -1469,38 +2073,55 @@ return;
 
 }
 
-if(!data.length){
 
-tbody.innerHTML=
+if(!data || !data.length){
+
+tbody.innerHTML =
 "<tr><td colspan='4'>No clients found.</td></tr>";
 
 return;
 
 }
 
-tbody.innerHTML=
-data.map(function(row){
+
+tbody.innerHTML =
+data.map(
+function(row){
 
 return `
+
 <tr>
 
-<td>${escapeHTML(row.name||"")}</td>
+<td>
+${escapeHTML(row.name || "")}
+</td>
 
-<td>${escapeHTML(row.phone||"")}</td>
+<td>
+${escapeHTML(row.phone || "")}
+</td>
 
-<td>${escapeHTML(row.email||"")}</td>
+<td>
+${escapeHTML(row.email || "")}
+</td>
 
 <td>
 
 <button
 class="action delete"
-onclick="deleteRow('clients','${row.id}','clients')">
+onclick="deleteRow(
+'clients',
+'${escapeAttribute(row.id)}',
+'clients'
+)">
+
 Delete
+
 </button>
 
 </td>
 
 </tr>
+
 `;
 
 }).join("");
@@ -1510,65 +2131,96 @@ Delete
 
 /* =====================================================
    CASES
-   ===================================================== */
+===================================================== */
 
 async function loadCases(){
 
-const tbody=
-document.getElementById("casesTable");
+const tbody =
+document.getElementById(
+"casesTable"
+);
 
-tbody.innerHTML=
+
+tbody.innerHTML =
 "<tr><td colspan='5'>Loading...</td></tr>";
 
-const {data,error}=
+
+const {data,error} =
 await supabaseClient
 .from("cases")
 .select("*")
-.order("created_at",{ascending:false});
+.order(
+"created_at",
+{
+ascending:false
+}
+);
+
 
 if(error){
 
-tbody.innerHTML=
+tbody.innerHTML =
 "<tr><td colspan='5'>Unable to load cases.</td></tr>";
+
+console.log(error);
 
 return;
 
 }
 
-if(!data.length){
 
-tbody.innerHTML=
+if(!data || !data.length){
+
+tbody.innerHTML =
 "<tr><td colspan='5'>No cases found.</td></tr>";
 
 return;
 
 }
 
-tbody.innerHTML=
-data.map(function(row){
+
+tbody.innerHTML =
+data.map(
+function(row){
 
 return `
+
 <tr>
 
-<td>${escapeHTML(row.title||"")}</td>
+<td>
+${escapeHTML(row.title || "")}
+</td>
 
-<td>${escapeHTML(row.case_number||"")}</td>
+<td>
+${escapeHTML(row.case_number || "")}
+</td>
 
-<td>${escapeHTML(row.client_name||"")}</td>
+<td>
+${escapeHTML(row.client_name || "")}
+</td>
 
-<td>${escapeHTML(row.status||"")}</td>
+<td>
+${escapeHTML(row.status || "")}
+</td>
 
 <td>
 
 <button
 class="action delete"
-onclick="deleteRow('cases','${row.id}','cases')">
+onclick="deleteRow(
+'cases',
+'${escapeAttribute(row.id)}',
+'cases'
+)">
+
 Delete
+
 </button>
 
 </td>
 
 </tr>
+
 `;
 
 }).join("");
@@ -1578,65 +2230,96 @@ Delete
 
 /* =====================================================
    APPOINTMENTS
-   ===================================================== */
+===================================================== */
 
 async function loadAppointments(){
 
-const tbody=
-document.getElementById("appointmentsTable");
+const tbody =
+document.getElementById(
+"appointmentsTable"
+);
 
-tbody.innerHTML=
+
+tbody.innerHTML =
 "<tr><td colspan='5'>Loading...</td></tr>";
 
-const {data,error}=
+
+const {data,error} =
 await supabaseClient
 .from("appointments")
 .select("*")
-.order("created_at",{ascending:false});
+.order(
+"created_at",
+{
+ascending:false
+}
+);
+
 
 if(error){
 
-tbody.innerHTML=
+tbody.innerHTML =
 "<tr><td colspan='5'>Unable to load appointments.</td></tr>";
+
+console.log(error);
 
 return;
 
 }
 
-if(!data.length){
 
-tbody.innerHTML=
+if(!data || !data.length){
+
+tbody.innerHTML =
 "<tr><td colspan='5'>No appointments found.</td></tr>";
 
 return;
 
 }
 
-tbody.innerHTML=
-data.map(function(row){
+
+tbody.innerHTML =
+data.map(
+function(row){
 
 return `
+
 <tr>
 
-<td>${escapeHTML(row.client_name||"")}</td>
+<td>
+${escapeHTML(row.client_name || "")}
+</td>
 
-<td>${escapeHTML(row.date||"")}</td>
+<td>
+${escapeHTML(row.date || "")}
+</td>
 
-<td>${escapeHTML(row.time||"")}</td>
+<td>
+${escapeHTML(row.time || "")}
+</td>
 
-<td>${escapeHTML(row.status||"")}</td>
+<td>
+${escapeHTML(row.status || "")}
+</td>
 
 <td>
 
 <button
 class="action delete"
-onclick="deleteRow('appointments','${row.id}','appointments')">
+onclick="deleteRow(
+'appointments',
+'${escapeAttribute(row.id)}',
+'appointments'
+)">
+
 Delete
+
 </button>
 
 </td>
 
 </tr>
+
 `;
 
 }).join("");
@@ -1646,65 +2329,96 @@ Delete
 
 /* =====================================================
    CONSULTATIONS
-   ===================================================== */
+===================================================== */
 
 async function loadConsultations(){
 
-const tbody=
-document.getElementById("consultationsTable");
+const tbody =
+document.getElementById(
+"consultationsTable"
+);
 
-tbody.innerHTML=
+
+tbody.innerHTML =
 "<tr><td colspan='5'>Loading...</td></tr>";
 
-const {data,error}=
+
+const {data,error} =
 await supabaseClient
 .from("consultations")
 .select("*")
-.order("created_at",{ascending:false});
+.order(
+"created_at",
+{
+ascending:false
+}
+);
+
 
 if(error){
 
-tbody.innerHTML=
+tbody.innerHTML =
 "<tr><td colspan='5'>Unable to load consultations.</td></tr>";
+
+console.log(error);
 
 return;
 
 }
 
-if(!data.length){
 
-tbody.innerHTML=
+if(!data || !data.length){
+
+tbody.innerHTML =
 "<tr><td colspan='5'>No consultations found.</td></tr>";
 
 return;
 
 }
 
-tbody.innerHTML=
-data.map(function(row){
+
+tbody.innerHTML =
+data.map(
+function(row){
 
 return `
+
 <tr>
 
-<td>${escapeHTML(row.client_name||"")}</td>
+<td>
+${escapeHTML(row.client_name || "")}
+</td>
 
-<td>${escapeHTML(row.subject||"")}</td>
+<td>
+${escapeHTML(row.subject || "")}
+</td>
 
-<td>${escapeHTML(row.date||"")}</td>
+<td>
+${escapeHTML(row.date || "")}
+</td>
 
-<td>${escapeHTML(row.status||"")}</td>
+<td>
+${escapeHTML(row.status || "")}
+</td>
 
 <td>
 
 <button
 class="action delete"
-onclick="deleteRow('consultations','${row.id}','consultations')">
+onclick="deleteRow(
+'consultations',
+'${escapeAttribute(row.id)}',
+'consultations'
+)">
+
 Delete
+
 </button>
 
 </td>
 
 </tr>
+
 `;
 
 }).join("");
@@ -1714,57 +2428,81 @@ Delete
 
 /* =====================================================
    DOCUMENTS
-   ===================================================== */
+===================================================== */
 
 async function loadDocuments(){
 
-const tbody=
-document.getElementById("documentsTable");
+const tbody =
+document.getElementById(
+"documentsTable"
+);
 
-tbody.innerHTML=
+
+tbody.innerHTML =
 "<tr><td colspan='4'>Loading...</td></tr>";
 
-const {data,error}=
+
+const {data,error} =
 await supabaseClient
 .from("documents")
 .select("*")
-.order("created_at",{ascending:false});
+.order(
+"created_at",
+{
+ascending:false
+}
+);
+
 
 if(error){
 
-tbody.innerHTML=
+tbody.innerHTML =
 "<tr><td colspan='4'>Unable to load documents.</td></tr>";
+
+console.log(error);
 
 return;
 
 }
 
-if(!data.length){
 
-tbody.innerHTML=
+if(!data || !data.length){
+
+tbody.innerHTML =
 "<tr><td colspan='4'>No documents found.</td></tr>";
 
 return;
 
 }
 
-tbody.innerHTML=
-data.map(function(row){
+
+tbody.innerHTML =
+data.map(
+function(row){
 
 return `
+
 <tr>
 
-<td>${escapeHTML(row.name||"")}</td>
+<td>
+${escapeHTML(row.name || "")}
+</td>
 
-<td>${escapeHTML(row.client_name||"")}</td>
+<td>
+${escapeHTML(row.client_name || "")}
+</td>
 
 <td>
 
-<a
-href="${escapeAttribute(row.url||"#")}"
-target="_blank">
-Open
-</a>
+<button
+class="open-document"
+onclick="openDocument(
+'${escapeAttribute(row.url || "")}'
+)">
+
+📄 Open
+
+</button>
 
 </td>
 
@@ -1772,13 +2510,19 @@ Open
 
 <button
 class="action delete"
-onclick="deleteRow('documents','${row.id}','documents')">
+onclick="deleteDocument(
+'${escapeAttribute(row.id)}',
+'${escapeAttribute(row.url || "")}'
+)">
+
 Delete
+
 </button>
 
 </td>
 
 </tr>
+
 `;
 
 }).join("");
@@ -1787,31 +2531,121 @@ Delete
 
 
 /* =====================================================
+   OPEN PRIVATE DOCUMENT
+===================================================== */
+
+async function openDocument(path){
+
+if(!path){
+
+alert(
+"Document path is missing."
+);
+
+return;
+
+}
+
+
+try{
+
+const {data,error} =
+await supabaseClient
+.storage
+.from(DOCUMENT_BUCKET)
+.createSignedUrl(
+path,
+3600
+);
+
+
+if(error){
+
+console.error(error);
+
+alert(
+"Unable to open document: " +
+error.message
+);
+
+return;
+
+}
+
+
+if(!data || !data.signedUrl){
+
+alert(
+"Document URL could not be generated."
+);
+
+return;
+
+}
+
+
+window.open(
+data.signedUrl,
+"_blank"
+);
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Unable to open document."
+);
+
+}
+
+}
+
+
+/* =====================================================
    MODAL
-   ===================================================== */
+===================================================== */
 
 function openModal(type){
 
-const modal=
-document.getElementById("modal");
-
-const title=
-document.getElementById("modalTitle");
-
-const form=
-document.getElementById("modalForm");
-
-document.getElementById("modalMessage")
-.style.display="none";
-
-modal.style.display="flex";
+const modal =
+document.getElementById(
+"modal"
+);
 
 
-if(type==="client"){
+const title =
+document.getElementById(
+"modalTitle"
+);
 
-title.textContent="Add Client";
 
-form.innerHTML=`
+const form =
+document.getElementById(
+"modalForm"
+);
+
+
+document
+.getElementById("modalMessage")
+.style.display =
+"none";
+
+
+modal.style.display =
+"flex";
+
+
+/* CLIENT */
+
+if(type === "client"){
+
+title.textContent =
+"Add Client";
+
+
+form.innerHTML = `
 
 <div class="form-group">
 
@@ -1823,6 +2657,7 @@ required>
 
 </div>
 
+
 <div class="form-group">
 
 <label>Phone</label>
@@ -1831,6 +2666,7 @@ required>
 id="f_phone">
 
 </div>
+
 
 <div class="form-group">
 
@@ -1842,19 +2678,25 @@ type="email">
 
 </div>
 
+
 <div class="form-group">
 
 <label>Address</label>
 
-<textarea id="f_address"></textarea>
+<textarea
+id="f_address">
+</textarea>
 
 </div>
+
 
 <button
 class="main-btn"
 type="button"
 onclick="saveClient()">
+
 SAVE CLIENT
+
 </button>
 
 `;
@@ -1862,35 +2704,46 @@ SAVE CLIENT
 }
 
 
-if(type==="case"){
+/* CASE */
 
-title.textContent="Add Case";
+if(type === "case"){
 
-form.innerHTML=`
+title.textContent =
+"Add Case";
+
+
+form.innerHTML = `
 
 <div class="form-group">
 
 <label>Case Title</label>
 
-<input id="f_title" required>
+<input
+id="f_title"
+required>
 
 </div>
+
 
 <div class="form-group">
 
 <label>Case Number</label>
 
-<input id="f_case_number">
+<input
+id="f_case_number">
 
 </div>
+
 
 <div class="form-group">
 
 <label>Client Name</label>
 
-<input id="f_client_name">
+<input
+id="f_client_name">
 
 </div>
+
 
 <div class="form-group">
 
@@ -1899,19 +2752,25 @@ form.innerHTML=`
 <select id="f_status">
 
 <option>Pending</option>
+
 <option>Running</option>
+
 <option>Decided</option>
+
 <option>Closed</option>
 
 </select>
 
 </div>
 
+
 <button
 class="main-btn"
 type="button"
 onclick="saveCase()">
+
 SAVE CASE
+
 </button>
 
 `;
@@ -1919,19 +2778,26 @@ SAVE CASE
 }
 
 
-if(type==="appointment"){
+/* APPOINTMENT */
 
-title.textContent="Add Appointment";
+if(type === "appointment"){
 
-form.innerHTML=`
+title.textContent =
+"Add Appointment";
+
+
+form.innerHTML = `
 
 <div class="form-group">
 
 <label>Client Name</label>
 
-<input id="f_client_name" required>
+<input
+id="f_client_name"
+required>
 
 </div>
+
 
 <div class="form-group">
 
@@ -1944,6 +2810,7 @@ required>
 
 </div>
 
+
 <div class="form-group">
 
 <label>Time</label>
@@ -1954,6 +2821,7 @@ type="time">
 
 </div>
 
+
 <div class="form-group">
 
 <label>Status</label>
@@ -1961,19 +2829,25 @@ type="time">
 <select id="f_status">
 
 <option>Pending</option>
+
 <option>Confirmed</option>
+
 <option>Completed</option>
+
 <option>Cancelled</option>
 
 </select>
 
 </div>
 
+
 <button
 class="main-btn"
 type="button"
 onclick="saveAppointment()">
+
 SAVE APPOINTMENT
+
 </button>
 
 `;
@@ -1981,27 +2855,37 @@ SAVE APPOINTMENT
 }
 
 
-if(type==="consultation"){
+/* CONSULTATION */
 
-title.textContent="Add Consultation";
+if(type === "consultation"){
 
-form.innerHTML=`
+title.textContent =
+"Add Consultation";
+
+
+form.innerHTML = `
 
 <div class="form-group">
 
 <label>Client Name</label>
 
-<input id="f_client_name" required>
+<input
+id="f_client_name"
+required>
 
 </div>
+
 
 <div class="form-group">
 
 <label>Subject</label>
 
-<input id="f_subject" required>
+<input
+id="f_subject"
+required>
 
 </div>
+
 
 <div class="form-group">
 
@@ -2013,6 +2897,7 @@ type="date">
 
 </div>
 
+
 <div class="form-group">
 
 <label>Status</label>
@@ -2020,26 +2905,34 @@ type="date">
 <select id="f_status">
 
 <option>Pending</option>
+
 <option>Completed</option>
+
 <option>Cancelled</option>
 
 </select>
 
 </div>
 
+
 <div class="form-group">
 
 <label>Notes</label>
 
-<textarea id="f_notes"></textarea>
+<textarea
+id="f_notes">
+</textarea>
 
 </div>
+
 
 <button
 class="main-btn"
 type="button"
 onclick="saveConsultation()">
+
 SAVE CONSULTATION
+
 </button>
 
 `;
@@ -2047,44 +2940,70 @@ SAVE CONSULTATION
 }
 
 
-if(type==="document"){
+/* DOCUMENT */
 
-title.textContent="Add Document";
+if(type === "document"){
 
-form.innerHTML=`
+title.textContent =
+"Upload Legal Document";
+
+
+form.innerHTML = `
 
 <div class="form-group">
 
 <label>Document Name</label>
 
-<input id="f_name" required>
+<input
+id="f_name"
+required
+placeholder="e.g. Petition, CNIC, Agreement">
 
 </div>
+
 
 <div class="form-group">
 
 <label>Client Name</label>
 
-<input id="f_client_name">
+<input
+id="f_client_name"
+placeholder="Client name">
 
 </div>
+
 
 <div class="form-group">
 
-<label>Document URL</label>
+<label>Select Document</label>
 
 <input
-id="f_url"
-type="url"
-placeholder="https://...">
+id="f_file"
+type="file"
+accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+required>
+
+<div class="file-info">
+
+Allowed:
+PDF, JPG, JPEG, PNG, DOC, DOCX
+
+<br>
+
+Maximum size: 10 MB
 
 </div>
+
+</div>
+
 
 <button
 class="main-btn"
 type="button"
 onclick="saveDocument()">
-SAVE DOCUMENT
+
+📤 UPLOAD & SAVE DOCUMENT
+
 </button>
 
 `;
@@ -2094,49 +3013,73 @@ SAVE DOCUMENT
 }
 
 
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
 function closeModal(){
 
 document
 .getElementById("modal")
-.style.display="none";
+.style.display =
+"none";
 
 }
 
 
 /* =====================================================
    SAVE CLIENT
-   ===================================================== */
+===================================================== */
 
 async function saveClient(){
 
-const {error}=
+const {error} =
 await supabaseClient
 .from("clients")
 .insert({
 
 name:
-document.getElementById("f_name").value,
+document
+.getElementById("f_name")
+.value
+.trim(),
 
 phone:
-document.getElementById("f_phone").value,
+document
+.getElementById("f_phone")
+.value
+.trim(),
 
 email:
-document.getElementById("f_email").value,
+document
+.getElementById("f_email")
+.value
+.trim(),
 
 address:
-document.getElementById("f_address").value
+document
+.getElementById("f_address")
+.value
+.trim()
 
 });
 
+
 if(error){
 
-showModalError(error.message);
+showModalError(
+error.message
+);
+
 return;
 
 }
 
+
 closeModal();
+
 loadClients();
+
 loadDashboard();
 
 }
@@ -2144,38 +3087,56 @@ loadDashboard();
 
 /* =====================================================
    SAVE CASE
-   ===================================================== */
+===================================================== */
 
 async function saveCase(){
 
-const {error}=
+const {error} =
 await supabaseClient
 .from("cases")
 .insert({
 
 title:
-document.getElementById("f_title").value,
+document
+.getElementById("f_title")
+.value
+.trim(),
 
 case_number:
-document.getElementById("f_case_number").value,
+document
+.getElementById("f_case_number")
+.value
+.trim(),
 
 client_name:
-document.getElementById("f_client_name").value,
+document
+.getElementById("f_client_name")
+.value
+.trim(),
 
 status:
-document.getElementById("f_status").value
+document
+.getElementById("f_status")
+.value
 
 });
 
+
 if(error){
 
-showModalError(error.message);
+showModalError(
+error.message
+);
+
 return;
 
 }
 
+
 closeModal();
+
 loadCases();
+
 loadDashboard();
 
 }
@@ -2183,38 +3144,54 @@ loadDashboard();
 
 /* =====================================================
    SAVE APPOINTMENT
-   ===================================================== */
+===================================================== */
 
 async function saveAppointment(){
 
-const {error}=
+const {error} =
 await supabaseClient
 .from("appointments")
 .insert({
 
 client_name:
-document.getElementById("f_client_name").value,
+document
+.getElementById("f_client_name")
+.value
+.trim(),
 
 date:
-document.getElementById("f_date").value,
+document
+.getElementById("f_date")
+.value,
 
 time:
-document.getElementById("f_time").value,
+document
+.getElementById("f_time")
+.value,
 
 status:
-document.getElementById("f_status").value
+document
+.getElementById("f_status")
+.value
 
 });
 
+
 if(error){
 
-showModalError(error.message);
+showModalError(
+error.message
+);
+
 return;
 
 }
 
+
 closeModal();
+
 loadAppointments();
+
 loadDashboard();
 
 }
@@ -2222,41 +3199,61 @@ loadDashboard();
 
 /* =====================================================
    SAVE CONSULTATION
-   ===================================================== */
+===================================================== */
 
 async function saveConsultation(){
 
-const {error}=
+const {error} =
 await supabaseClient
 .from("consultations")
 .insert({
 
 client_name:
-document.getElementById("f_client_name").value,
+document
+.getElementById("f_client_name")
+.value
+.trim(),
 
 subject:
-document.getElementById("f_subject").value,
+document
+.getElementById("f_subject")
+.value
+.trim(),
 
 date:
-document.getElementById("f_date").value,
+document
+.getElementById("f_date")
+.value,
 
 status:
-document.getElementById("f_status").value,
+document
+.getElementById("f_status")
+.value,
 
 notes:
-document.getElementById("f_notes").value
+document
+.getElementById("f_notes")
+.value
+.trim()
 
 });
 
+
 if(error){
 
-showModalError(error.message);
+showModalError(
+error.message
+);
+
 return;
 
 }
 
+
 closeModal();
+
 loadConsultations();
+
 loadDashboard();
 
 }
@@ -2264,76 +3261,288 @@ loadDashboard();
 
 /* =====================================================
    SAVE DOCUMENT
-   ===================================================== */
+===================================================== */
 
 async function saveDocument(){
 
-const {error}=
-await supabaseClient
-.from("documents")
-.insert({
+const name =
+document
+.getElementById("f_name")
+.value
+.trim();
 
-name:
-document.getElementById("f_name").value,
 
-client_name:
-document.getElementById("f_client_name").value,
+const clientName =
+document
+.getElementById("f_client_name")
+.value
+.trim();
 
-url:
-document.getElementById("f_url").value
 
-});
+const fileInput =
+document
+.getElementById("f_file");
 
-if(error){
 
-showModalError(error.message);
+const file =
+fileInput.files[0];
+
+
+if(!name){
+
+showModalError(
+"Please enter document name."
+);
+
 return;
 
 }
 
+
+if(!file){
+
+showModalError(
+"Please select a document."
+);
+
+return;
+
+}
+
+
+/* 10 MB LIMIT */
+
+if(
+file.size >
+10 * 1024 * 1024
+){
+
+showModalError(
+"File is too large. Maximum allowed size is 10 MB."
+);
+
+return;
+
+}
+
+
+/* GET EXTENSION */
+
+const originalName =
+file.name;
+
+
+const parts =
+originalName.split(".");
+
+
+const extension =
+parts.length > 1
+? parts.pop().toLowerCase()
+: "";
+
+
+/* SAFE FILE NAME */
+
+const safeName =
+name
+.replace(
+/[^a-zA-Z0-9-_]/g,
+"-"
+)
+.toLowerCase();
+
+
+const uniqueFileName =
+Date.now() +
+"_" +
+Math.random()
+.toString(36)
+.substring(2,8) +
+"_" +
+safeName +
+"." +
+extension;
+
+
+/* STORAGE PATH */
+
+const filePath =
+uniqueFileName;
+
+
+try{
+
+
+/* =================================================
+   UPLOAD FILE
+================================================= */
+
+const {data:uploadData,error:uploadError} =
+await supabaseClient
+.storage
+.from(DOCUMENT_BUCKET)
+.upload(
+filePath,
+file,
+{
+cacheControl:"3600",
+upsert:false,
+contentType:file.type
+}
+);
+
+
+if(uploadError){
+
+console.error(
+"Upload error:",
+uploadError
+);
+
+showModalError(
+"File upload failed: " +
+uploadError.message
+);
+
+return;
+
+}
+
+
+/* =================================================
+   SAVE DATABASE RECORD
+================================================= */
+
+const {error:dbError} =
+await supabaseClient
+.from("documents")
+.insert({
+
+name:name,
+
+client_name:clientName,
+
+url:uploadData.path
+
+});
+
+
+if(dbError){
+
+console.error(
+"Database error:",
+dbError
+);
+
+
+/* DELETE FILE IF DATABASE SAVE FAILED */
+
+await supabaseClient
+.storage
+.from(DOCUMENT_BUCKET)
+.remove([
+uploadData.path
+]);
+
+
+showModalError(
+"Document database save failed: " +
+dbError.message
+);
+
+return;
+
+}
+
+
+/* =================================================
+   SUCCESS
+================================================= */
+
 closeModal();
+
+
+alert(
+"Document uploaded successfully."
+);
+
+
 loadDocuments();
+
+
+}catch(error){
+
+console.error(error);
+
+showModalError(
+"Document upload failed. Please try again."
+);
+
+}
 
 }
 
 
 /* =====================================================
-   DELETE
-   ===================================================== */
+   DELETE NORMAL DATABASE ROW
+===================================================== */
 
-async function deleteRow(table,id,page){
+async function deleteRow(
+table,
+id,
+page
+){
 
-if(!confirm("Are you sure you want to delete this record?")){
+if(
+!confirm(
+"Are you sure you want to delete this record?"
+)
+){
+
 return;
+
 }
 
-const {error}=
+
+const {error} =
 await supabaseClient
 .from(table)
 .delete()
 .eq("id",id);
 
+
 if(error){
 
-alert("Delete failed: "+error.message);
+alert(
+"Delete failed: " +
+error.message
+);
+
 return;
 
 }
 
-if(page==="clients")
+
+if(page === "clients")
 loadClients();
 
-if(page==="cases")
+
+if(page === "cases")
 loadCases();
 
-if(page==="appointments")
+
+if(page === "appointments")
 loadAppointments();
 
-if(page==="consultations")
+
+if(page === "consultations")
 loadConsultations();
 
-if(page==="documents")
+
+if(page === "documents")
 loadDocuments();
+
 
 loadDashboard();
 
@@ -2341,21 +3550,123 @@ loadDashboard();
 
 
 /* =====================================================
+   DELETE DOCUMENT
+===================================================== */
+
+async function deleteDocument(
+id,
+filePath
+){
+
+if(
+!confirm(
+"Are you sure you want to permanently delete this document?"
+)
+){
+
+return;
+
+}
+
+
+try{
+
+
+/* DELETE STORAGE FILE */
+
+if(filePath){
+
+const {error:storageError} =
+await supabaseClient
+.storage
+.from(DOCUMENT_BUCKET)
+.remove([
+filePath
+]);
+
+
+if(storageError){
+
+console.error(
+"Storage delete error:",
+storageError
+);
+
+alert(
+"File deletion failed: " +
+storageError.message
+);
+
+return;
+
+}
+
+}
+
+
+/* DELETE DATABASE RECORD */
+
+const {error:dbError} =
+await supabaseClient
+.from("documents")
+.delete()
+.eq("id",id);
+
+
+if(dbError){
+
+alert(
+"Database deletion failed: " +
+dbError.message
+);
+
+return;
+
+}
+
+
+alert(
+"Document deleted successfully."
+);
+
+
+loadDocuments();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Unable to delete document."
+);
+
+}
+
+}
+
+
+/* =====================================================
    MODAL ERROR
-   ===================================================== */
+===================================================== */
 
 function showModalError(text){
 
-const message=
-document.getElementById("modalMessage");
+const message =
+document.getElementById(
+"modalMessage"
+);
 
-message.className=
+
+message.className =
 "message error";
 
-message.style.display=
+
+message.style.display =
 "block";
 
-message.textContent=
+
+message.textContent =
 text;
 
 }
@@ -2363,16 +3674,36 @@ text;
 
 /* =====================================================
    SECURITY HELPERS
-   ===================================================== */
+===================================================== */
 
 function escapeHTML(value){
 
 return String(value)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+
+.replace(
+/&/g,
+"&amp;"
+)
+
+.replace(
+/</g,
+"&lt;"
+)
+
+.replace(
+/>/g,
+"&gt;"
+)
+
+.replace(
+/"/g,
+"&quot;"
+)
+
+.replace(
+/'/g,
+"&#039;"
+);
 
 }
 
@@ -2380,23 +3711,91 @@ return String(value)
 function escapeAttribute(value){
 
 return String(value)
-.replace(/"/g,"%22")
-.replace(/</g,"%3C")
-.replace(/>/g,"%3E");
+
+.replace(
+/&/g,
+"&amp;"
+)
+
+.replace(
+/"/g,
+"&quot;"
+)
+
+.replace(
+/'/g,
+"&#039;"
+)
+
+.replace(
+/</g,
+"&lt;"
+)
+
+.replace(
+/>/g,
+"&gt;"
+);
 
 }
 
 
 /* =====================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
-   ===================================================== */
+   CLOSE MODAL OUTSIDE CLICK
+===================================================== */
 
 document
 .getElementById("modal")
-.addEventListener("click",function(e){
+.addEventListener(
+"click",
+function(e){
 
-if(e.target===this){
+if(e.target === this){
+
 closeModal();
+
+}
+
+});
+
+
+/* =====================================================
+   FILE INPUT INFO
+===================================================== */
+
+document.addEventListener(
+"change",
+function(e){
+
+if(
+e.target &&
+e.target.id === "f_file"
+){
+
+const file =
+e.target.files[0];
+
+
+if(!file)
+return;
+
+
+const maxSize =
+10 * 1024 * 1024;
+
+
+if(file.size > maxSize){
+
+alert(
+"This file is larger than 10 MB."
+);
+
+e.target.value="";
+
+return;
+
+}
+
 }
 
 });
@@ -2404,4 +3803,5 @@ closeModal();
 </script>
 
 </body>
+
 </html>
