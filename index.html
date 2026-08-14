@@ -3,7 +3,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0">
 
 <title>Qureshi Law Firm | Admin Panel</title>
 
@@ -22,13 +24,17 @@ body{
     color:#111;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
     font:inherit;
 }
 
 button{
     cursor:pointer;
 }
+
 
 /* ================= LOGIN ================= */
 
@@ -83,6 +89,11 @@ button{
     background:#fff;
 }
 
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
@@ -100,6 +111,12 @@ button{
 
 .main-btn:hover{
     background:#000;
+}
+
+.secondary-btn{
+    padding:12px 18px;
+    background:white;
+    border:1px solid #222;
 }
 
 .link-btn{
@@ -125,6 +142,7 @@ button{
     background:#e8f7ed;
     color:#126b38;
 }
+
 
 /* ================= APP ================= */
 
@@ -214,6 +232,7 @@ button{
     margin:0 0 30px;
 }
 
+
 /* ================= DASHBOARD ================= */
 
 .stats{
@@ -239,6 +258,7 @@ button{
     margin-top:10px;
 }
 
+
 /* ================= TABLE ================= */
 
 .card{
@@ -258,7 +278,8 @@ table{
     background:white;
 }
 
-th,td{
+th,
+td{
     padding:14px;
     border-bottom:1px solid #ddd;
     text-align:left;
@@ -279,6 +300,13 @@ th{
 .delete{
     color:#a00000;
 }
+
+.open-document{
+    color:#111;
+    text-decoration:underline;
+    font-weight:bold;
+}
+
 
 /* ================= MODAL ================= */
 
@@ -316,15 +344,16 @@ th{
 
 .file-info{
     color:#777;
-    font-size:14px;
     line-height:1.6;
     margin-top:10px;
 }
 
-.open-link{
-    color:#0645ad;
-    text-decoration:underline;
+.loading{
+    padding:20px;
+    text-align:center;
+    color:#777;
 }
+
 
 /* ================= MOBILE ================= */
 
@@ -401,700 +430,793 @@ th{
 
 
 <!-- =====================================================
-LOGIN
+     LOGIN PAGE
 ===================================================== -->
 
 <section id="loginPage" class="auth-page">
 
-<div class="auth-box">
+    <div class="auth-box">
 
-<h1 class="logo-title">
-Qureshi Law<br>Firm
-</h1>
+        <h1 class="logo-title">
+            Qureshi Law<br>
+            Firm
+        </h1>
 
-<div class="subtitle">
-ADMINISTRATION PANEL
-</div>
+        <div class="subtitle">
+            ADMINISTRATION PANEL
+        </div>
 
-<form id="loginForm">
 
-<div class="form-group">
+        <form id="loginForm">
 
-<label>Email</label>
+            <div class="form-group">
 
-<input
-id="loginEmail"
-type="email"
-placeholder="Enter email"
-required>
+                <label>Email</label>
 
-</div>
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="Enter email"
+                    required>
 
-<div class="form-group">
+            </div>
 
-<label>Password</label>
 
-<input
-id="loginPassword"
-type="password"
-placeholder="Enter password"
-required>
+            <div class="form-group">
 
-</div>
+                <label>Password</label>
 
-<button
-class="main-btn"
-type="submit">
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="Enter password"
+                    required>
 
-LOGIN TO ADMIN PANEL
+            </div>
 
-</button>
 
-</form>
+            <button
+                class="main-btn"
+                type="submit">
 
-<button
-class="link-btn"
-onclick="showForgot()">
+                LOGIN TO ADMIN PANEL
 
-Forgot Password?
+            </button>
 
-</button>
+        </form>
 
-<div id="loginMessage" class="message"></div>
 
-</div>
+        <button
+            class="link-btn"
+            onclick="showForgot()">
+
+            Forgot Password?
+
+        </button>
+
+
+        <div
+            id="loginMessage"
+            class="message">
+        </div>
+
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-FORGOT PASSWORD
+     FORGOT PASSWORD
 ===================================================== -->
 
 <section
-id="forgotPage"
-class="auth-page"
-style="display:none">
+    id="forgotPage"
+    class="auth-page"
+    style="display:none">
 
-<div class="auth-box">
+    <div class="auth-box">
 
-<h1 class="logo-title">
-Qureshi Law<br>Firm
-</h1>
+        <h1 class="logo-title">
+            Qureshi Law<br>
+            Firm
+        </h1>
 
-<div class="subtitle">
-PASSWORD RECOVERY
-</div>
+        <div class="subtitle">
+            PASSWORD RECOVERY
+        </div>
 
-<form id="forgotForm">
 
-<div class="form-group">
+        <form id="forgotForm">
 
-<label>Email</label>
+            <div class="form-group">
 
-<input
-id="forgotEmail"
-type="email"
-placeholder="Enter your registered email"
-required>
+                <label>Email</label>
 
-</div>
+                <input
+                    id="forgotEmail"
+                    type="email"
+                    placeholder="Enter your registered email"
+                    required>
 
-<button
-class="main-btn"
-type="submit">
+            </div>
 
-SEND RECOVERY EMAIL
 
-</button>
+            <button
+                class="main-btn"
+                type="submit">
 
-</form>
+                SEND RECOVERY EMAIL
 
-<button
-class="link-btn"
-onclick="showLogin()">
+            </button>
 
-Back to Login
+        </form>
 
-</button>
 
-<div
-id="forgotMessage"
-class="message">
-</div>
+        <button
+            class="link-btn"
+            onclick="showLogin()">
 
-</div>
+            Back to Login
+
+        </button>
+
+
+        <div
+            id="forgotMessage"
+            class="message">
+        </div>
+
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-RESET PASSWORD
+     RESET PASSWORD
 ===================================================== -->
 
 <section
-id="resetPage"
-class="auth-page"
-style="display:none">
+    id="resetPage"
+    class="auth-page"
+    style="display:none">
 
-<div class="auth-box">
+    <div class="auth-box">
 
-<h1 class="logo-title">
-Qureshi Law<br>Firm
-</h1>
+        <h1 class="logo-title">
+            Qureshi Law<br>
+            Firm
+        </h1>
 
-<div class="subtitle">
-RESET PASSWORD
-</div>
+        <div class="subtitle">
+            RESET PASSWORD
+        </div>
 
-<form id="resetForm">
 
-<div class="form-group">
+        <form id="resetForm">
 
-<label>New Password</label>
+            <div class="form-group">
 
-<input
-id="newPassword"
-type="password"
-minlength="8"
-placeholder="Minimum 8 characters"
-required>
+                <label>New Password</label>
 
-</div>
+                <input
+                    id="newPassword"
+                    type="password"
+                    minlength="8"
+                    placeholder="Minimum 8 characters"
+                    required>
 
-<div class="form-group">
+            </div>
 
-<label>Confirm New Password</label>
 
-<input
-id="confirmPassword"
-type="password"
-minlength="8"
-placeholder="Confirm password"
-required>
+            <div class="form-group">
 
-</div>
+                <label>Confirm New Password</label>
 
-<button
-class="main-btn"
-type="submit">
+                <input
+                    id="confirmPassword"
+                    type="password"
+                    minlength="8"
+                    placeholder="Confirm password"
+                    required>
 
-SET NEW PASSWORD
+            </div>
 
-</button>
 
-</form>
+            <button
+                class="main-btn"
+                type="submit">
 
-<div
-id="resetMessage"
-class="message">
-</div>
+                SET NEW PASSWORD
 
-</div>
+            </button>
+
+        </form>
+
+
+        <div
+            id="resetMessage"
+            class="message">
+        </div>
+
+    </div>
 
 </section>
 
 
+
 <!-- =====================================================
-ADMIN APP
+     ADMIN APP
 ===================================================== -->
 
 <div id="app">
 
-<header class="topbar">
 
-<div class="brand">
+    <header class="topbar">
 
-Qureshi Law Firm
+        <div class="brand">
 
-<small>
-ADMIN PANEL
-</small>
+            Qureshi Law Firm
+
+            <small>
+                ADMIN PANEL
+            </small>
+
+        </div>
+
+
+        <button
+            class="logout"
+            onclick="logout()">
+
+            LOGOUT
+
+        </button>
+
+    </header>
+
+
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()">
+
+        ☰ MENU
+
+    </button>
+
+
+
+    <div class="layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside
+            id="sidebar"
+            class="sidebar">
+
+
+            <button
+                class="nav-item active"
+                onclick="showPage('dashboard',this)">
+
+                📊 Dashboard
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('clients',this)">
+
+                👥 Clients
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('cases',this)">
+
+                ⚖️ Cases
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('appointments',this)">
+
+                📅 Appointments
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('consultations',this)">
+
+                💬 Consultations
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('documents',this)">
+
+                📁 Documents
+
+            </button>
+
+
+        </aside>
+
+
+
+        <!-- CONTENT -->
+
+        <main
+            id="content"
+            class="content">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================= -->
+
+            <section id="dashboardPage">
+
+                <h1 class="page-title">
+                    Dashboard
+                </h1>
+
+                <p>
+                    Welcome to Qureshi Law Firm Administration Panel.
+                </p>
+
+
+                <div class="stats">
+
+
+                    <div class="stat">
+
+                        <div
+                            id="clientCount"
+                            class="stat-number">
+
+                            0
+
+                        </div>
+
+                        <div class="stat-title">
+                            CLIENTS
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div
+                            id="caseCount"
+                            class="stat-number">
+
+                            0
+
+                        </div>
+
+                        <div class="stat-title">
+                            CASES
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div
+                            id="appointmentCount"
+                            class="stat-number">
+
+                            0
+
+                        </div>
+
+                        <div class="stat-title">
+                            APPOINTMENTS
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div
+                            id="consultationCount"
+                            class="stat-number">
+
+                            0
+
+                        </div>
+
+                        <div class="stat-title">
+                            CONSULTATIONS
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CLIENTS
+            ================================================= -->
+
+            <section
+                id="clientsPage"
+                style="display:none">
+
+                <h1 class="page-title">
+                    Clients
+                </h1>
+
+
+                <div class="card">
+
+                    <button
+                        class="main-btn"
+                        style="max-width:220px;margin-top:0"
+                        onclick="openModal('client')">
+
+                        + ADD CLIENT
+
+                    </button>
+
+                </div>
+
+
+                <div class="card table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="clientsTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CASES
+            ================================================= -->
+
+            <section
+                id="casesPage"
+                style="display:none">
+
+                <h1 class="page-title">
+                    Cases
+                </h1>
+
+
+                <div class="card">
+
+                    <button
+                        class="main-btn"
+                        style="max-width:220px;margin-top:0"
+                        onclick="openModal('case')">
+
+                        + ADD CASE
+
+                    </button>
+
+                </div>
+
+
+                <div class="card table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Case Title</th>
+                                <th>Case Number</th>
+                                <th>Client</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="casesTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 APPOINTMENTS
+            ================================================= -->
+
+            <section
+                id="appointmentsPage"
+                style="display:none">
+
+                <h1 class="page-title">
+                    Appointments
+                </h1>
+
+
+                <div class="card">
+
+                    <button
+                        class="main-btn"
+                        style="max-width:250px;margin-top:0"
+                        onclick="openModal('appointment')">
+
+                        + ADD APPOINTMENT
+
+                    </button>
+
+                </div>
+
+
+                <div class="card table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Client</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="appointmentsTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONSULTATIONS
+            ================================================= -->
+
+            <section
+                id="consultationsPage"
+                style="display:none">
+
+                <h1 class="page-title">
+                    Consultations
+                </h1>
+
+
+                <div class="card">
+
+                    <button
+                        class="main-btn"
+                        style="max-width:260px;margin-top:0"
+                        onclick="openModal('consultation')">
+
+                        + ADD CONSULTATION
+
+                    </button>
+
+                </div>
+
+
+                <div class="card table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Client</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="consultationsTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DOCUMENTS
+            ================================================= -->
+
+            <section
+                id="documentsPage"
+                style="display:none">
+
+                <h1 class="page-title">
+                    Legal Documents
+                </h1>
+
+
+                <div class="card">
+
+                    <p>
+                        Upload and securely manage client legal documents.
+                    </p>
+
+
+                    <button
+                        class="main-btn"
+                        style="max-width:280px;margin-top:10px"
+                        onclick="openModal('document')">
+
+                        📁 UPLOAD LEGAL DOCUMENT
+
+                    </button>
+
+                </div>
+
+
+                <div class="card table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Document Name</th>
+                                <th>Client</th>
+                                <th>Document</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="documentsTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
 
 </div>
 
-<button
-class="logout"
-onclick="logout()">
-
-LOGOUT
-
-</button>
-
-</header>
-
-
-<button
-class="menu-button"
-onclick="toggleMenu()">
-
-☰ MENU
-
-</button>
-
-
-<div class="layout">
-
-
-<!-- SIDEBAR -->
-
-<aside
-id="sidebar"
-class="sidebar">
-
-<button
-class="nav-item active"
-onclick="showPage('dashboard',this)">
-
-📊 Dashboard
-
-</button>
-
-<button
-class="nav-item"
-onclick="showPage('clients',this)">
-
-👥 Clients
-
-</button>
-
-<button
-class="nav-item"
-onclick="showPage('cases',this)">
-
-⚖️ Cases
-
-</button>
-
-<button
-class="nav-item"
-onclick="showPage('appointments',this)">
-
-📅 Appointments
-
-</button>
-
-<button
-class="nav-item"
-onclick="showPage('consultations',this)">
-
-💬 Consultations
-
-</button>
-
-<button
-class="nav-item"
-onclick="showPage('documents',this)">
-
-📁 Documents
-
-</button>
-
-</aside>
-
-
-<main id="content" class="content">
 
 
 <!-- =====================================================
-DASHBOARD
+     MODAL
 ===================================================== -->
-
-<section id="dashboardPage">
-
-<h1 class="page-title">
-Dashboard
-</h1>
-
-<p>
-Welcome to Qureshi Law Firm Administration Panel.
-</p>
-
-<div class="stats">
-
-<div class="stat">
 
 <div
-id="clientCount"
-class="stat-number">
-0
-</div>
-
-<div class="stat-title">
-CLIENTS
-</div>
-
-</div>
+    id="modal"
+    class="modal">
 
 
-<div class="stat">
-
-<div
-id="caseCount"
-class="stat-number">
-0
-</div>
-
-<div class="stat-title">
-CASES
-</div>
-
-</div>
+    <div class="modal-box">
 
 
-<div class="stat">
+        <div class="modal-head">
 
-<div
-id="appointmentCount"
-class="stat-number">
-0
-</div>
-
-<div class="stat-title">
-APPOINTMENTS
-</div>
-
-</div>
+            <h2 id="modalTitle">
+                Add
+            </h2>
 
 
-<div class="stat">
+            <button
+                class="close"
+                onclick="closeModal()">
 
-<div
-id="consultationCount"
-class="stat-number">
-0
-</div>
+                ×
 
-<div class="stat-title">
-CONSULTATIONS
-</div>
+            </button>
+
+        </div>
+
+
+        <form
+            id="modalForm">
+        </form>
+
+
+        <div
+            id="modalMessage"
+            class="message">
+        </div>
+
+
+    </div>
 
 </div>
 
-</div>
-
-</section>
-
-
-<!-- =====================================================
-CLIENTS
-===================================================== -->
-
-<section
-id="clientsPage"
-style="display:none">
-
-<h1 class="page-title">
-Clients
-</h1>
-
-<div class="card">
-
-<button
-class="main-btn"
-style="max-width:220px;margin-top:0"
-onclick="openModal('client')">
-
-+ ADD CLIENT
-
-</button>
-
-</div>
-
-<div class="card table-wrap">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Name</th>
-<th>Phone</th>
-<th>Email</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="clientsTable">
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-CASES
-===================================================== -->
-
-<section
-id="casesPage"
-style="display:none">
-
-<h1 class="page-title">
-Cases
-</h1>
-
-<div class="card">
-
-<button
-class="main-btn"
-style="max-width:220px;margin-top:0"
-onclick="openModal('case')">
-
-+ ADD CASE
-
-</button>
-
-</div>
-
-<div class="card table-wrap">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Case Title</th>
-<th>Case Number</th>
-<th>Client</th>
-<th>Status</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="casesTable">
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-APPOINTMENTS
-===================================================== -->
-
-<section
-id="appointmentsPage"
-style="display:none">
-
-<h1 class="page-title">
-Appointments
-</h1>
-
-<div class="card">
-
-<button
-class="main-btn"
-style="max-width:250px;margin-top:0"
-onclick="openModal('appointment')">
-
-+ ADD APPOINTMENT
-
-</button>
-
-</div>
-
-<div class="card table-wrap">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Client</th>
-<th>Date</th>
-<th>Time</th>
-<th>Status</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="appointmentsTable">
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-CONSULTATIONS
-===================================================== -->
-
-<section
-id="consultationsPage"
-style="display:none">
-
-<h1 class="page-title">
-Consultations
-</h1>
-
-<div class="card">
-
-<button
-class="main-btn"
-style="max-width:260px;margin-top:0"
-onclick="openModal('consultation')">
-
-+ ADD CONSULTATION
-
-</button>
-
-</div>
-
-<div class="card table-wrap">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Client</th>
-<th>Subject</th>
-<th>Date</th>
-<th>Status</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="consultationsTable">
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-DOCUMENTS
-===================================================== -->
-
-<section
-id="documentsPage"
-style="display:none">
-
-<h1 class="page-title">
-Legal Documents
-</h1>
-
-<div class="card">
-
-<button
-class="main-btn"
-style="max-width:280px;margin-top:0"
-onclick="openModal('document')">
-
-+ UPLOAD LEGAL DOCUMENT
-
-</button>
-
-</div>
-
-<div class="card table-wrap">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Document Name</th>
-<th>Client</th>
-<th>Document</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="documentsTable">
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-</main>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-MODAL
-===================================================== -->
-
-<div
-id="modal"
-class="modal">
-
-<div class="modal-box">
-
-<div class="modal-head">
-
-<h2 id="modalTitle">
-Add
-</h2>
-
-<button
-class="close"
-onclick="closeModal()">
-
-×
-
-</button>
-
-</div>
-
-<form id="modalForm"></form>
-
-<div
-id="modalMessage"
-class="message">
-</div>
-
-</div>
-
-</div>
 
 
 <script>
 
 /* =====================================================
-SUPABASE CONFIGURATION
+   SUPABASE CONFIGURATION
 ===================================================== */
 
 const SUPABASE_URL =
 "https://qviauargicjxhpspgfib.supabase.co";
 
+
 const SUPABASE_ANON_KEY =
 "sb_publishable_GzATmim-fUkxFyMXYWFCXA_reB9bn4D";
+
+
+/*
+ IMPORTANT:
+
+ This is the EXACT name of the bucket
+ you created in Supabase Storage.
+
+ Keep the bucket PRIVATE.
+*/
+
+const DOCUMENT_BUCKET =
+"Legal documents";
 
 
 const supabaseClient =
@@ -1104,27 +1226,16 @@ window.supabase.createClient(
 );
 
 
-/*
- IMPORTANT:
-
-This is the EXACT bucket name
-you created in Supabase.
-*/
-
-const STORAGE_BUCKET =
-"Legal documents";
-
-
-/*
-Your GitHub Pages URL
-*/
+/* =====================================================
+   RESET URL
+===================================================== */
 
 const RESET_URL =
 "https://qureshilawfirm.github.io/Qureshi-Law-Firm-Admin/";
 
 
 /* =====================================================
-ELEMENTS
+   ELEMENTS
 ===================================================== */
 
 const loginPage =
@@ -1141,41 +1252,41 @@ document.getElementById("app");
 
 
 /* =====================================================
-SHOW LOGIN
+   SHOW LOGIN
 ===================================================== */
 
 function showLogin(){
 
-loginPage.style.display="flex";
+    loginPage.style.display="flex";
 
-forgotPage.style.display="none";
+    forgotPage.style.display="none";
 
-resetPage.style.display="none";
+    resetPage.style.display="none";
 
-app.style.display="none";
+    app.style.display="none";
 
 }
 
 
 /* =====================================================
-SHOW FORGOT
+   SHOW FORGOT
 ===================================================== */
 
 function showForgot(){
 
-loginPage.style.display="none";
+    loginPage.style.display="none";
 
-forgotPage.style.display="flex";
+    forgotPage.style.display="flex";
 
-resetPage.style.display="none";
+    resetPage.style.display="none";
 
-app.style.display="none";
+    app.style.display="none";
 
 }
 
 
 /* =====================================================
-LOGIN
+   LOGIN
 ===================================================== */
 
 document
@@ -1184,74 +1295,83 @@ document
 "submit",
 async function(e){
 
-e.preventDefault();
-
-const email =
-document
-.getElementById("loginEmail")
-.value
-.trim();
-
-const password =
-document
-.getElementById("loginPassword")
-.value;
-
-const message =
-document
-.getElementById("loginMessage");
-
-try{
-
-const {data,error} =
-await supabaseClient.auth
-.signInWithPassword({
-
-email:email,
-password:password
-
-});
+    e.preventDefault();
 
 
-if(error){
+    const email =
+    document
+    .getElementById("loginEmail")
+    .value
+    .trim();
 
-message.className =
-"message error";
 
-message.style.display =
-"block";
+    const password =
+    document
+    .getElementById("loginPassword")
+    .value;
 
-message.textContent =
-"Login failed: " +
-error.message;
 
-return;
+    const message =
+    document.getElementById("loginMessage");
 
-}
 
-message.style.display =
-"none";
+    try{
 
-showApp();
+        const {data,error} =
+        await supabaseClient.auth
+        .signInWithPassword({
 
-}catch(err){
+            email:email,
 
-message.className =
-"message error";
+            password:password
 
-message.style.display =
-"block";
+        });
 
-message.textContent =
-"Login failed. Please try again.";
 
-}
+        if(error){
+
+            message.className =
+            "message error";
+
+            message.style.display =
+            "block";
+
+            message.textContent =
+            "Login failed: " +
+            error.message;
+
+            return;
+
+        }
+
+
+        message.style.display =
+        "none";
+
+
+        showApp();
+
+
+    }catch(err){
+
+        console.error(err);
+
+        message.className =
+        "message error";
+
+        message.style.display =
+        "block";
+
+        message.textContent =
+        "Login failed. Please try again.";
+
+    }
 
 });
 
 
 /* =====================================================
-FORGOT PASSWORD
+   FORGOT PASSWORD
 ===================================================== */
 
 document
@@ -1260,158 +1380,195 @@ document
 "submit",
 async function(e){
 
-e.preventDefault();
-
-const email =
-document
-.getElementById("forgotEmail")
-.value
-.trim();
-
-const message =
-document
-.getElementById("forgotMessage");
-
-try{
-
-const {error} =
-await supabaseClient.auth
-.resetPasswordForEmail(
-email,
-{
-redirectTo:RESET_URL
-}
-);
+    e.preventDefault();
 
 
-if(error){
-
-message.className =
-"message error";
-
-message.style.display =
-"block";
-
-message.textContent =
-"Failed to send recovery email: " +
-error.message;
-
-return;
-
-}
+    const email =
+    document
+    .getElementById("forgotEmail")
+    .value
+    .trim();
 
 
-message.className =
-"message success";
+    const message =
+    document
+    .getElementById("forgotMessage");
 
-message.style.display =
-"block";
 
-message.textContent =
-"Recovery email sent. Please check your email.";
+    try{
 
-}catch(err){
+        const {error} =
+        await supabaseClient.auth
+        .resetPasswordForEmail(
+            email,
+            {
+                redirectTo:RESET_URL
+            }
+        );
 
-message.className =
-"message error";
 
-message.style.display =
-"block";
+        if(error){
 
-message.textContent =
-"Unable to send recovery email.";
+            message.className =
+            "message error";
 
-}
+            message.style.display =
+            "block";
+
+            message.textContent =
+            "Failed to send recovery email: " +
+            error.message;
+
+            return;
+
+        }
+
+
+        message.className =
+        "message success";
+
+        message.style.display =
+        "block";
+
+        message.textContent =
+        "Recovery email sent. Please check your email.";
+
+
+    }catch(err){
+
+        console.error(err);
+
+        message.className =
+        "message error";
+
+        message.style.display =
+        "block";
+
+        message.textContent =
+        "Unable to send recovery email.";
+
+    }
 
 });
 
 
 /* =====================================================
-AUTH STATE
+   AUTH STATE
 ===================================================== */
 
-supabaseClient.auth
-.onAuthStateChange(
+supabaseClient.auth.onAuthStateChange(
 async function(event,session){
 
-console.log(
-"Auth event:",
-event
-);
+    console.log(
+        "Auth event:",
+        event
+    );
 
 
-if(event==="PASSWORD_RECOVERY"){
+    if(event === "PASSWORD_RECOVERY"){
 
-loginPage.style.display="none";
+        loginPage.style.display =
+        "none";
 
-forgotPage.style.display="none";
+        forgotPage.style.display =
+        "none";
 
-app.style.display="none";
+        app.style.display =
+        "none";
 
-resetPage.style.display="flex";
+        resetPage.style.display =
+        "flex";
 
-return;
+        return;
 
-}
+    }
 
 
-if(session &&
-event==="SIGNED_IN"){
+    if(
+        session &&
+        event === "SIGNED_IN"
+    ){
 
-showApp();
+        showApp();
 
-}
+    }
 
 });
 
 
 /* =====================================================
-CHECK SESSION
+   CHECK SESSION
 ===================================================== */
 
 async function checkSession(){
 
-const {data} =
-await supabaseClient.auth
-.getSession();
+    try{
 
-const session =
-data.session;
-
-
-if(session){
-
-showApp();
-
-}else{
-
-const hash =
-window.location.hash;
+        const {data,error} =
+        await supabaseClient.auth
+        .getSession();
 
 
-if(
-hash &&
-(
-hash.includes("type=recovery") ||
-hash.includes("access_token")
-)
-){
+        if(error){
 
-return;
+            console.error(error);
+
+            showLogin();
+
+            return;
+
+        }
+
+
+        const session =
+        data.session;
+
+
+        if(session){
+
+            showApp();
+
+            return;
+
+        }
+
+
+        const hash =
+        window.location.hash;
+
+
+        if(
+            hash &&
+            (
+                hash.includes("type=recovery") ||
+                hash.includes("access_token")
+            )
+        ){
+
+            return;
+
+        }
+
+
+        showLogin();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showLogin();
+
+    }
 
 }
 
-showLogin();
-
-}
-
-}
 
 checkSession();
 
 
 /* =====================================================
-RESET PASSWORD
+   RESET PASSWORD
 ===================================================== */
 
 document
@@ -1420,2023 +1577,2131 @@ document
 "submit",
 async function(e){
 
-e.preventDefault();
-
-const password =
-document
-.getElementById("newPassword")
-.value;
-
-const confirm =
-document
-.getElementById("confirmPassword")
-.value;
-
-const message =
-document
-.getElementById("resetMessage");
+    e.preventDefault();
 
 
-if(password.length<8){
-
-message.className =
-"message error";
-
-message.style.display =
-"block";
-
-message.textContent =
-"Password must contain at least 8 characters.";
-
-return;
-
-}
+    const password =
+    document
+    .getElementById("newPassword")
+    .value;
 
 
-if(password!==confirm){
-
-message.className =
-"message error";
-
-message.style.display =
-"block";
-
-message.textContent =
-"Passwords do not match.";
-
-return;
-
-}
+    const confirm =
+    document
+    .getElementById("confirmPassword")
+    .value;
 
 
-try{
-
-const {error} =
-await supabaseClient.auth
-.updateUser({
-password:password
-});
+    const message =
+    document
+    .getElementById("resetMessage");
 
 
-if(error){
+    if(password.length < 8){
 
-message.className =
-"message error";
+        message.className =
+        "message error";
 
-message.style.display =
-"block";
+        message.style.display =
+        "block";
 
-message.textContent =
-"Password update failed: " +
-error.message;
+        message.textContent =
+        "Password must contain at least 8 characters.";
 
-return;
+        return;
 
-}
-
-
-message.className =
-"message success";
-
-message.style.display =
-"block";
-
-message.textContent =
-"Password updated successfully.";
+    }
 
 
-setTimeout(
-async function(){
+    if(password !== confirm){
 
-await supabaseClient.auth
-.signOut();
+        message.className =
+        "message error";
 
-window.location.href =
-RESET_URL;
+        message.style.display =
+        "block";
 
-},
-2500
-);
+        message.textContent =
+        "Passwords do not match.";
+
+        return;
+
+    }
 
 
-}catch(err){
+    try{
 
-message.className =
-"message error";
+        const {error} =
+        await supabaseClient.auth
+        .updateUser({
 
-message.style.display =
-"block";
+            password:password
 
-message.textContent =
-"Password update failed.";
+        });
 
-}
+
+        if(error){
+
+            message.className =
+            "message error";
+
+            message.style.display =
+            "block";
+
+            message.textContent =
+            "Password update failed: " +
+            error.message;
+
+            return;
+
+        }
+
+
+        message.className =
+        "message success";
+
+        message.style.display =
+        "block";
+
+        message.textContent =
+        "Password updated successfully. You can now login.";
+
+
+        setTimeout(
+        async function(){
+
+            await supabaseClient.auth.signOut();
+
+            window.location.href =
+            RESET_URL;
+
+        },
+        2500
+        );
+
+
+    }catch(err){
+
+        console.error(err);
+
+        message.className =
+        "message error";
+
+        message.style.display =
+        "block";
+
+        message.textContent =
+        "Password update failed.";
+
+    }
 
 });
 
 
 /* =====================================================
-SHOW APP
+   SHOW APP
 ===================================================== */
 
 function showApp(){
 
-loginPage.style.display="none";
+    loginPage.style.display =
+    "none";
 
-forgotPage.style.display="none";
+    forgotPage.style.display =
+    "none";
 
-resetPage.style.display="none";
+    resetPage.style.display =
+    "none";
 
-app.style.display="block";
+    app.style.display =
+    "block";
 
-loadDashboard();
+    loadDashboard();
 
 }
 
 
 /* =====================================================
-LOGOUT
+   LOGOUT
 ===================================================== */
 
 async function logout(){
 
-await supabaseClient.auth
-.signOut();
+    await supabaseClient.auth.signOut();
 
-showLogin();
+    showLogin();
 
 }
 
 
 /* =====================================================
-MOBILE MENU
+   MOBILE MENU
 ===================================================== */
 
 function toggleMenu(){
 
-document
-.getElementById("sidebar")
-.classList
-.toggle("open");
+    document
+    .getElementById("sidebar")
+    .classList
+    .toggle("open");
 
 }
 
 
 /* =====================================================
-PAGE NAVIGATION
+   PAGE NAVIGATION
 ===================================================== */
 
 function showPage(page,button){
 
-const pages=[
-"dashboard",
-"clients",
-"cases",
-"appointments",
-"consultations",
-"documents"
-];
+    const pages = [
+        "dashboard",
+        "clients",
+        "cases",
+        "appointments",
+        "consultations",
+        "documents"
+    ];
 
 
-pages.forEach(
-function(p){
+    pages.forEach(
+    function(p){
 
-const el =
-document
-.getElementById(
-p+"Page"
-);
-
-if(el){
-
-el.style.display =
-p===page ?
-"block" :
-"none";
-
-}
-
-});
+        const el =
+        document.getElementById(
+            p + "Page"
+        );
 
 
-document
-.querySelectorAll(".nav-item")
-.forEach(
-function(item){
+        if(el){
 
-item.classList
-.remove("active");
+            el.style.display =
+            p === page
+            ? "block"
+            : "none";
 
-});
+        }
 
-
-if(button){
-
-button.classList
-.add("active");
-
-}
+    });
 
 
-document
-.getElementById("sidebar")
-.classList
-.remove("open");
+    document
+    .querySelectorAll(".nav-item")
+    .forEach(
+    function(item){
+
+        item.classList.remove(
+            "active"
+        );
+
+    });
 
 
-if(page==="dashboard")
-loadDashboard();
+    if(button){
 
-if(page==="clients")
-loadClients();
+        button.classList.add(
+            "active"
+        );
 
-if(page==="cases")
-loadCases();
+    }
 
-if(page==="appointments")
-loadAppointments();
 
-if(page==="consultations")
-loadConsultations();
+    document
+    .getElementById("sidebar")
+    .classList
+    .remove("open");
 
-if(page==="documents")
-loadDocuments();
+
+    if(page === "dashboard")
+        loadDashboard();
+
+    if(page === "clients")
+        loadClients();
+
+    if(page === "cases")
+        loadCases();
+
+    if(page === "appointments")
+        loadAppointments();
+
+    if(page === "consultations")
+        loadConsultations();
+
+    if(page === "documents")
+        loadDocuments();
 
 }
 
 
 /* =====================================================
-COUNT
+   COUNT
 ===================================================== */
 
 async function getCount(table){
 
-try{
+    try{
 
-const {count,error} =
-await supabaseClient
-.from(table)
-.select(
-"*",
-{
-count:"exact",
-head:true
-}
-);
+        const {count,error} =
+        await supabaseClient
+        .from(table)
+        .select(
+            "*",
+            {
+                count:"exact",
+                head:true
+            }
+        );
 
 
-if(error){
+        if(error){
 
-console.log(
-table,
-error
-);
+            console.error(
+                table,
+                error
+            );
 
-return 0;
+            return 0;
 
-}
+        }
 
-return count || 0;
 
-}catch(e){
+        return count || 0;
 
-return 0;
 
-}
+    }catch(e){
+
+        console.error(e);
+
+        return 0;
+
+    }
 
 }
 
 
 /* =====================================================
-DASHBOARD
+   DASHBOARD
 ===================================================== */
 
 async function loadDashboard(){
 
-document
-.getElementById("clientCount")
-.textContent =
-await getCount("clients");
+    document
+    .getElementById("clientCount")
+    .textContent =
+    await getCount("clients");
 
 
-document
-.getElementById("caseCount")
-.textContent =
-await getCount("cases");
+    document
+    .getElementById("caseCount")
+    .textContent =
+    await getCount("cases");
 
 
-document
-.getElementById("appointmentCount")
-.textContent =
-await getCount("appointments");
+    document
+    .getElementById("appointmentCount")
+    .textContent =
+    await getCount("appointments");
 
 
-document
-.getElementById("consultationCount")
-.textContent =
-await getCount("consultations");
+    document
+    .getElementById("consultationCount")
+    .textContent =
+    await getCount("consultations");
 
 }
 
 
 /* =====================================================
-CLIENTS
+   CLIENTS
 ===================================================== */
 
 async function loadClients(){
 
-const tbody =
-document
-.getElementById("clientsTable");
-
-tbody.innerHTML =
-"<tr><td colspan='4'>Loading...</td></tr>";
+    const tbody =
+    document.getElementById(
+        "clientsTable"
+    );
 
 
-const {data,error} =
-await supabaseClient
-.from("clients")
-.select("*")
-.order(
-"created_at",
-{
-ascending:false
-}
-);
+    tbody.innerHTML =
+    "<tr><td colspan='4' class='loading'>Loading...</td></tr>";
 
 
-if(error){
-
-tbody.innerHTML =
-"<tr><td colspan='4'>Unable to load clients.</td></tr>";
-
-console.log(error);
-
-return;
-
-}
-
-
-if(!data.length){
-
-tbody.innerHTML =
-"<tr><td colspan='4'>No clients found.</td></tr>";
-
-return;
-
-}
+    const {data,error} =
+    await supabaseClient
+    .from("clients")
+    .select("*")
+    .order(
+        "created_at",
+        {
+            ascending:false
+        }
+    );
 
 
-tbody.innerHTML =
-data.map(
-function(row){
+    if(error){
 
-return `
+        tbody.innerHTML =
+        "<tr><td colspan='4'>Unable to load clients.</td></tr>";
 
-<tr>
+        console.error(error);
 
-<td>
-${escapeHTML(row.name||"")}
-</td>
+        return;
 
-<td>
-${escapeHTML(row.phone||"")}
-</td>
+    }
 
-<td>
-${escapeHTML(row.email||"")}
-</td>
 
-<td>
+    if(!data || !data.length){
 
-<button
-class="action delete"
-onclick="deleteRow(
-'clients',
-'${escapeAttribute(row.id)}',
-'clients'
-)">
+        tbody.innerHTML =
+        "<tr><td colspan='4'>No clients found.</td></tr>";
 
-Delete
+        return;
 
-</button>
+    }
 
-</td>
 
-</tr>
+    tbody.innerHTML =
+    data.map(
+    function(row){
 
-`;
+        return `
 
-}
-).join("");
+        <tr>
+
+            <td>
+                ${escapeHTML(row.name || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.phone || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.email || "")}
+            </td>
+
+            <td>
+
+                <button
+                    class="action delete"
+                    onclick="
+                    deleteRow(
+                        'clients',
+                        '${row.id}',
+                        'clients'
+                    )">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    }).join("");
 
 }
 
 
 /* =====================================================
-CASES
+   CASES
 ===================================================== */
 
 async function loadCases(){
 
-const tbody =
-document
-.getElementById("casesTable");
-
-tbody.innerHTML =
-"<tr><td colspan='5'>Loading...</td></tr>";
+    const tbody =
+    document.getElementById(
+        "casesTable"
+    );
 
 
-const {data,error} =
-await supabaseClient
-.from("cases")
-.select("*")
-.order(
-"created_at",
-{
-ascending:false
-}
-);
+    tbody.innerHTML =
+    "<tr><td colspan='5' class='loading'>Loading...</td></tr>";
 
 
-if(error){
-
-tbody.innerHTML =
-"<tr><td colspan='5'>Unable to load cases.</td></tr>";
-
-return;
-
-}
-
-
-if(!data.length){
-
-tbody.innerHTML =
-"<tr><td colspan='5'>No cases found.</td></tr>";
-
-return;
-
-}
+    const {data,error} =
+    await supabaseClient
+    .from("cases")
+    .select("*")
+    .order(
+        "created_at",
+        {
+            ascending:false
+        }
+    );
 
 
-tbody.innerHTML =
-data.map(
-function(row){
+    if(error){
 
-return `
+        tbody.innerHTML =
+        "<tr><td colspan='5'>Unable to load cases.</td></tr>";
 
-<tr>
+        console.error(error);
 
-<td>
-${escapeHTML(row.title||"")}
-</td>
+        return;
 
-<td>
-${escapeHTML(row.case_number||"")}
-</td>
+    }
 
-<td>
-${escapeHTML(row.client_name||"")}
-</td>
 
-<td>
-${escapeHTML(row.status||"")}
-</td>
+    if(!data || !data.length){
 
-<td>
+        tbody.innerHTML =
+        "<tr><td colspan='5'>No cases found.</td></tr>";
 
-<button
-class="action delete"
-onclick="deleteRow(
-'cases',
-'${escapeAttribute(row.id)}',
-'cases'
-)">
+        return;
 
-Delete
+    }
 
-</button>
 
-</td>
+    tbody.innerHTML =
+    data.map(
+    function(row){
 
-</tr>
+        return `
 
-`;
+        <tr>
 
-}
-).join("");
+            <td>
+                ${escapeHTML(row.title || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.case_number || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.client_name || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.status || "")}
+            </td>
+
+            <td>
+
+                <button
+                    class="action delete"
+                    onclick="
+                    deleteRow(
+                        'cases',
+                        '${row.id}',
+                        'cases'
+                    )">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    }).join("");
 
 }
 
 
 /* =====================================================
-APPOINTMENTS
+   APPOINTMENTS
 ===================================================== */
 
 async function loadAppointments(){
 
-const tbody =
-document
-.getElementById("appointmentsTable");
-
-tbody.innerHTML =
-"<tr><td colspan='5'>Loading...</td></tr>";
+    const tbody =
+    document.getElementById(
+        "appointmentsTable"
+    );
 
 
-const {data,error} =
-await supabaseClient
-.from("appointments")
-.select("*")
-.order(
-"created_at",
-{
-ascending:false
-}
-);
+    tbody.innerHTML =
+    "<tr><td colspan='5' class='loading'>Loading...</td></tr>";
 
 
-if(error){
-
-tbody.innerHTML =
-"<tr><td colspan='5'>Unable to load appointments.</td></tr>";
-
-return;
-
-}
-
-
-if(!data.length){
-
-tbody.innerHTML =
-"<tr><td colspan='5'>No appointments found.</td></tr>";
-
-return;
-
-}
+    const {data,error} =
+    await supabaseClient
+    .from("appointments")
+    .select("*")
+    .order(
+        "created_at",
+        {
+            ascending:false
+        }
+    );
 
 
-tbody.innerHTML =
-data.map(
-function(row){
+    if(error){
 
-return `
+        tbody.innerHTML =
+        "<tr><td colspan='5'>Unable to load appointments.</td></tr>";
 
-<tr>
+        console.error(error);
 
-<td>
-${escapeHTML(row.client_name||"")}
-</td>
+        return;
 
-<td>
-${escapeHTML(row.date||"")}
-</td>
+    }
 
-<td>
-${escapeHTML(row.time||"")}
-</td>
 
-<td>
-${escapeHTML(row.status||"")}
-</td>
+    if(!data || !data.length){
 
-<td>
+        tbody.innerHTML =
+        "<tr><td colspan='5'>No appointments found.</td></tr>";
 
-<button
-class="action delete"
-onclick="deleteRow(
-'appointments',
-'${escapeAttribute(row.id)}',
-'appointments'
-)">
+        return;
 
-Delete
+    }
 
-</button>
 
-</td>
+    tbody.innerHTML =
+    data.map(
+    function(row){
 
-</tr>
+        return `
 
-`;
+        <tr>
 
-}
-).join("");
+            <td>
+                ${escapeHTML(row.client_name || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.date || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.time || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.status || "")}
+            </td>
+
+            <td>
+
+                <button
+                    class="action delete"
+                    onclick="
+                    deleteRow(
+                        'appointments',
+                        '${row.id}',
+                        'appointments'
+                    )">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    }).join("");
 
 }
 
 
 /* =====================================================
-CONSULTATIONS
+   CONSULTATIONS
 ===================================================== */
 
 async function loadConsultations(){
 
-const tbody =
-document
-.getElementById("consultationsTable");
-
-tbody.innerHTML =
-"<tr><td colspan='5'>Loading...</td></tr>";
+    const tbody =
+    document.getElementById(
+        "consultationsTable"
+    );
 
 
-const {data,error} =
-await supabaseClient
-.from("consultations")
-.select("*")
-.order(
-"created_at",
-{
-ascending:false
-}
-);
+    tbody.innerHTML =
+    "<tr><td colspan='5' class='loading'>Loading...</td></tr>";
 
 
-if(error){
-
-tbody.innerHTML =
-"<tr><td colspan='5'>Unable to load consultations.</td></tr>";
-
-return;
-
-}
-
-
-if(!data.length){
-
-tbody.innerHTML =
-"<tr><td colspan='5'>No consultations found.</td></tr>";
-
-return;
-
-}
+    const {data,error} =
+    await supabaseClient
+    .from("consultations")
+    .select("*")
+    .order(
+        "created_at",
+        {
+            ascending:false
+        }
+    );
 
 
-tbody.innerHTML =
-data.map(
-function(row){
+    if(error){
 
-return `
+        tbody.innerHTML =
+        "<tr><td colspan='5'>Unable to load consultations.</td></tr>";
 
-<tr>
+        console.error(error);
 
-<td>
-${escapeHTML(row.client_name||"")}
-</td>
+        return;
 
-<td>
-${escapeHTML(row.subject||"")}
-</td>
+    }
 
-<td>
-${escapeHTML(row.date||"")}
-</td>
 
-<td>
-${escapeHTML(row.status||"")}
-</td>
+    if(!data || !data.length){
 
-<td>
+        tbody.innerHTML =
+        "<tr><td colspan='5'>No consultations found.</td></tr>";
 
-<button
-class="action delete"
-onclick="deleteRow(
-'consultations',
-'${escapeAttribute(row.id)}',
-'consultations'
-)">
+        return;
 
-Delete
+    }
 
-</button>
 
-</td>
+    tbody.innerHTML =
+    data.map(
+    function(row){
 
-</tr>
+        return `
 
-`;
+        <tr>
 
-}
-).join("");
+            <td>
+                ${escapeHTML(row.client_name || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.subject || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.date || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.status || "")}
+            </td>
+
+            <td>
+
+                <button
+                    class="action delete"
+                    onclick="
+                    deleteRow(
+                        'consultations',
+                        '${row.id}',
+                        'consultations'
+                    )">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    }).join("");
 
 }
 
 
 /* =====================================================
-DOCUMENTS
+   DOCUMENTS
 ===================================================== */
 
 async function loadDocuments(){
 
-const tbody =
-document
-.getElementById("documentsTable");
-
-tbody.innerHTML =
-"<tr><td colspan='4'>Loading...</td></tr>";
+    const tbody =
+    document.getElementById(
+        "documentsTable"
+    );
 
 
-const {data,error} =
-await supabaseClient
-.from("documents")
-.select("*")
-.order(
-"created_at",
-{
-ascending:false
-}
-);
+    tbody.innerHTML =
+    "<tr><td colspan='4' class='loading'>Loading documents...</td></tr>";
 
 
-if(error){
-
-tbody.innerHTML =
-"<tr><td colspan='4'>Unable to load documents.</td></tr>";
-
-console.log(error);
-
-return;
-
-}
-
-
-if(!data.length){
-
-tbody.innerHTML =
-"<tr><td colspan='4'>No documents found.</td></tr>";
-
-return;
-
-}
+    const {data,error} =
+    await supabaseClient
+    .from("documents")
+    .select("*")
+    .order(
+        "created_at",
+        {
+            ascending:false
+        }
+    );
 
 
-tbody.innerHTML =
-data.map(
-function(row){
+    if(error){
 
-return `
+        tbody.innerHTML =
+        "<tr><td colspan='4'>Unable to load documents.</td></tr>";
 
-<tr>
+        console.error(error);
 
-<td>
-${escapeHTML(row.name||"")}
-</td>
+        return;
 
-<td>
-${escapeHTML(row.client_name||"")}
-</td>
+    }
 
-<td>
 
-<button
-class="action"
-onclick="openDocument(
-'${escapeAttribute(row.url||"")}'
-)">
+    if(!data || !data.length){
 
-Open
+        tbody.innerHTML =
+        "<tr><td colspan='4'>No documents found.</td></tr>";
 
-</button>
+        return;
 
-</td>
+    }
 
-<td>
 
-<button
-class="action delete"
-onclick="deleteDocument(
-'${escapeAttribute(row.id)}',
-'${escapeAttribute(row.url||"")}'
-)">
+    let html = "";
 
-Delete
 
-</button>
+    for(const row of data){
 
-</td>
+        let documentLink =
+        "Unavailable";
 
-</tr>
 
-`;
+        if(row.url){
 
-}
-).join("");
+            try{
+
+                const {
+                    data:signedData,
+                    error:signedError
+                } =
+                await supabaseClient
+                .storage
+                .from(DOCUMENT_BUCKET)
+                .createSignedUrl(
+                    row.url,
+                    3600
+                );
+
+
+                if(
+                    !signedError &&
+                    signedData &&
+                    signedData.signedUrl
+                ){
+
+                    documentLink = `
+
+                    <a
+                        class="open-document"
+                        href="${escapeAttribute(
+                            signedData.signedUrl
+                        )}"
+                        target="_blank"
+                        rel="noopener">
+
+                        Open
+
+                    </a>
+
+                    `;
+
+                }
+
+            }catch(err){
+
+                console.error(
+                    "Signed URL error:",
+                    err
+                );
+
+            }
+
+        }
+
+
+        html += `
+
+        <tr>
+
+            <td>
+                ${escapeHTML(row.name || "")}
+            </td>
+
+            <td>
+                ${escapeHTML(row.client_name || "")}
+            </td>
+
+            <td>
+                ${documentLink}
+            </td>
+
+            <td>
+
+                <button
+                    class="action delete"
+                    onclick="
+                    deleteRow(
+                        'documents',
+                        '${row.id}',
+                        'documents'
+                    )">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    }
+
+
+    tbody.innerHTML =
+    html;
 
 }
 
 
 /* =====================================================
-MODAL
+   MODAL
 ===================================================== */
 
 function openModal(type){
 
-const modal =
-document.getElementById("modal");
+    const modal =
+    document.getElementById(
+        "modal"
+    );
 
-const title =
-document.getElementById("modalTitle");
 
-const form =
-document.getElementById("modalForm");
+    const title =
+    document.getElementById(
+        "modalTitle"
+    );
 
-document
-.getElementById("modalMessage")
-.style.display="none";
 
+    const form =
+    document.getElementById(
+        "modalForm"
+    );
 
-modal.style.display="flex";
 
+    document
+    .getElementById(
+        "modalMessage"
+    )
+    .style.display =
+    "none";
 
-/* ================= CLIENT ================= */
 
-if(type==="client"){
+    modal.style.display =
+    "flex";
 
-title.textContent =
-"Add Client";
 
+    /* ================= CLIENT ================= */
 
-form.innerHTML = `
+    if(type === "client"){
 
-<div class="form-group">
+        title.textContent =
+        "Add Client";
 
-<label>Name</label>
 
-<input
-id="f_name"
-required>
+        form.innerHTML = `
 
-</div>
+        <div class="form-group">
 
+            <label>Name</label>
 
-<div class="form-group">
+            <input
+                id="f_name"
+                required>
 
-<label>Phone</label>
+        </div>
 
-<input
-id="f_phone">
 
-</div>
+        <div class="form-group">
 
+            <label>Phone</label>
 
-<div class="form-group">
+            <input
+                id="f_phone">
 
-<label>Email</label>
+        </div>
 
-<input
-id="f_email"
-type="email">
 
-</div>
+        <div class="form-group">
 
+            <label>Email</label>
 
-<div class="form-group">
+            <input
+                id="f_email"
+                type="email">
 
-<label>Address</label>
+        </div>
 
-<textarea
-id="f_address">
-</textarea>
 
-</div>
+        <div class="form-group">
 
+            <label>Address</label>
 
-<button
-class="main-btn"
-type="button"
-onclick="saveClient()">
+            <textarea
+                id="f_address">
+            </textarea>
 
-SAVE CLIENT
+        </div>
 
-</button>
 
-`;
+        <button
+            class="main-btn"
+            type="button"
+            onclick="saveClient()">
 
-}
+            SAVE CLIENT
 
+        </button>
 
-/* ================= CASE ================= */
+        `;
 
-if(type==="case"){
+    }
 
-title.textContent =
-"Add Case";
 
+    /* ================= CASE ================= */
 
-form.innerHTML = `
+    if(type === "case"){
 
-<div class="form-group">
+        title.textContent =
+        "Add Case";
 
-<label>Case Title</label>
 
-<input
-id="f_title"
-required>
+        form.innerHTML = `
 
-</div>
+        <div class="form-group">
 
+            <label>Case Title</label>
 
-<div class="form-group">
+            <input
+                id="f_title"
+                required>
 
-<label>Case Number</label>
+        </div>
 
-<input
-id="f_case_number">
 
-</div>
+        <div class="form-group">
 
+            <label>Case Number</label>
 
-<div class="form-group">
+            <input
+                id="f_case_number">
 
-<label>Client Name</label>
+        </div>
 
-<input
-id="f_client_name">
 
-</div>
+        <div class="form-group">
 
+            <label>Client Name</label>
 
-<div class="form-group">
+            <input
+                id="f_client_name">
 
-<label>Status</label>
+        </div>
 
-<select id="f_status">
 
-<option>Pending</option>
-<option>Running</option>
-<option>Decided</option>
-<option>Closed</option>
+        <div class="form-group">
 
-</select>
+            <label>Status</label>
 
-</div>
+            <select
+                id="f_status">
 
+                <option>Pending</option>
+                <option>Running</option>
+                <option>Decided</option>
+                <option>Closed</option>
 
-<button
-class="main-btn"
-type="button"
-onclick="saveCase()">
+            </select>
 
-SAVE CASE
+        </div>
 
-</button>
 
-`;
+        <button
+            class="main-btn"
+            type="button"
+            onclick="saveCase()">
 
-}
+            SAVE CASE
 
+        </button>
 
-/* ================= APPOINTMENT ================= */
+        `;
 
-if(type==="appointment"){
+    }
 
-title.textContent =
-"Add Appointment";
 
+    /* ================= APPOINTMENT ================= */
 
-form.innerHTML = `
+    if(type === "appointment"){
 
-<div class="form-group">
+        title.textContent =
+        "Add Appointment";
 
-<label>Client Name</label>
 
-<input
-id="f_client_name"
-required>
+        form.innerHTML = `
 
-</div>
+        <div class="form-group">
 
+            <label>Client Name</label>
 
-<div class="form-group">
+            <input
+                id="f_client_name"
+                required>
 
-<label>Date</label>
+        </div>
 
-<input
-id="f_date"
-type="date"
-required>
 
-</div>
+        <div class="form-group">
 
+            <label>Date</label>
 
-<div class="form-group">
+            <input
+                id="f_date"
+                type="date"
+                required>
 
-<label>Time</label>
+        </div>
 
-<input
-id="f_time"
-type="time">
 
-</div>
+        <div class="form-group">
 
+            <label>Time</label>
 
-<div class="form-group">
+            <input
+                id="f_time"
+                type="time">
 
-<label>Status</label>
+        </div>
 
-<select id="f_status">
 
-<option>Pending</option>
-<option>Confirmed</option>
-<option>Completed</option>
-<option>Cancelled</option>
+        <div class="form-group">
 
-</select>
+            <label>Status</label>
 
-</div>
+            <select
+                id="f_status">
 
+                <option>Pending</option>
+                <option>Confirmed</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
 
-<button
-class="main-btn"
-type="button"
-onclick="saveAppointment()">
+            </select>
 
-SAVE APPOINTMENT
+        </div>
 
-</button>
 
-`;
+        <button
+            class="main-btn"
+            type="button"
+            onclick="saveAppointment()">
 
-}
+            SAVE APPOINTMENT
 
+        </button>
 
-/* ================= CONSULTATION ================= */
+        `;
 
-if(type==="consultation"){
+    }
 
-title.textContent =
-"Add Consultation";
 
+    /* ================= CONSULTATION ================= */
 
-form.innerHTML = `
+    if(type === "consultation"){
 
-<div class="form-group">
+        title.textContent =
+        "Add Consultation";
 
-<label>Client Name</label>
 
-<input
-id="f_client_name"
-required>
+        form.innerHTML = `
 
-</div>
+        <div class="form-group">
 
+            <label>Client Name</label>
 
-<div class="form-group">
+            <input
+                id="f_client_name"
+                required>
 
-<label>Subject</label>
+        </div>
 
-<input
-id="f_subject"
-required>
 
-</div>
+        <div class="form-group">
 
+            <label>Subject</label>
 
-<div class="form-group">
+            <input
+                id="f_subject"
+                required>
 
-<label>Date</label>
+        </div>
 
-<input
-id="f_date"
-type="date">
 
-</div>
+        <div class="form-group">
 
+            <label>Date</label>
 
-<div class="form-group">
+            <input
+                id="f_date"
+                type="date">
 
-<label>Status</label>
+        </div>
 
-<select id="f_status">
 
-<option>Pending</option>
-<option>Completed</option>
-<option>Cancelled</option>
+        <div class="form-group">
 
-</select>
+            <label>Status</label>
 
-</div>
+            <select
+                id="f_status">
 
+                <option>Pending</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
 
-<div class="form-group">
+            </select>
 
-<label>Notes</label>
+        </div>
 
-<textarea
-id="f_notes">
-</textarea>
 
-</div>
+        <div class="form-group">
 
+            <label>Notes</label>
 
-<button
-class="main-btn"
-type="button"
-onclick="saveConsultation()">
+            <textarea
+                id="f_notes">
+            </textarea>
 
-SAVE CONSULTATION
+        </div>
 
-</button>
 
-`;
+        <button
+            class="main-btn"
+            type="button"
+            onclick="saveConsultation()">
 
-}
+            SAVE CONSULTATION
 
+        </button>
 
-/* ================= DOCUMENT ================= */
+        `;
 
-if(type==="document"){
+    }
 
-title.textContent =
-"Upload Legal Document";
 
+    /* ================= DOCUMENT ================= */
 
-form.innerHTML = `
+    if(type === "document"){
 
-<div class="form-group">
+        title.textContent =
+        "Upload Legal Document";
 
-<label>Document Name</label>
 
-<input
-id="f_name"
-placeholder="e.g. CNIC, FIR, Agreement"
-required>
+        form.innerHTML = `
 
-</div>
+        <div class="form-group">
 
+            <label>
+                Document Name
+            </label>
 
-<div class="form-group">
+            <input
+                id="f_name"
+                type="text"
+                placeholder="e.g. CNIC"
+                required>
 
-<label>Client Name</label>
+        </div>
 
-<input
-id="f_client_name"
-placeholder="Client name"
-required>
 
-</div>
+        <div class="form-group">
 
+            <label>
+                Client Name
+            </label>
 
-<div class="form-group">
+            <input
+                id="f_client_name"
+                type="text"
+                placeholder="Client name"
+                required>
 
-<label>Select Document</label>
+        </div>
 
-<input
-id="f_file"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
-required>
 
-<div class="file-info">
+        <div class="form-group">
 
-Allowed:
-PDF, JPG, JPEG, PNG, DOC, DOCX
+            <label>
+                Select Document
+            </label>
 
-<br>
+            <input
+                id="f_file"
+                type="file"
+                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                required>
 
-Maximum size: 10 MB
 
-</div>
+            <div class="file-info">
 
-</div>
+                Allowed: PDF, JPG, JPEG, PNG, DOC, DOCX
+                <br>
 
+                Maximum size: 10 MB
 
-<button
-class="main-btn"
-type="button"
-onclick="saveDocument()">
+            </div>
 
-📤 UPLOAD & SAVE DOCUMENT
+        </div>
 
-</button>
 
-`;
+        <button
+            class="main-btn"
+            type="button"
+            onclick="saveDocument()">
 
-}
+            📤 UPLOAD & SAVE DOCUMENT
+
+        </button>
+
+        `;
+
+    }
 
 }
 
 
 /* =====================================================
-CLOSE MODAL
+   CLOSE MODAL
 ===================================================== */
 
 function closeModal(){
 
-document
-.getElementById("modal")
-.style.display="none";
+    document
+    .getElementById("modal")
+    .style.display =
+    "none";
 
 }
 
 
 /* =====================================================
-SAVE CLIENT
+   SAVE CLIENT
 ===================================================== */
 
 async function saveClient(){
 
-const {error} =
-await supabaseClient
-.from("clients")
-.insert({
+    const {error} =
+    await supabaseClient
+    .from("clients")
+    .insert({
 
-name:
-document
-.getElementById("f_name")
-.value
-.trim(),
+        name:
+        document
+        .getElementById("f_name")
+        .value
+        .trim(),
 
-phone:
-document
-.getElementById("f_phone")
-.value
-.trim(),
+        phone:
+        document
+        .getElementById("f_phone")
+        .value
+        .trim(),
 
-email:
-document
-.getElementById("f_email")
-.value
-.trim(),
+        email:
+        document
+        .getElementById("f_email")
+        .value
+        .trim(),
 
-address:
-document
-.getElementById("f_address")
-.value
-.trim()
+        address:
+        document
+        .getElementById("f_address")
+        .value
+        .trim()
 
-});
-
-
-if(error){
-
-showModalError(
-error.message
-);
-
-return;
-
-}
+    });
 
 
-closeModal();
+    if(error){
 
-loadClients();
+        showModalError(
+            error.message
+        );
 
-loadDashboard();
+        return;
+
+    }
+
+
+    closeModal();
+
+    loadClients();
+
+    loadDashboard();
 
 }
 
 
 /* =====================================================
-SAVE CASE
+   SAVE CASE
 ===================================================== */
 
 async function saveCase(){
 
-const {error} =
-await supabaseClient
-.from("cases")
-.insert({
+    const {error} =
+    await supabaseClient
+    .from("cases")
+    .insert({
 
-title:
-document
-.getElementById("f_title")
-.value
-.trim(),
+        title:
+        document
+        .getElementById("f_title")
+        .value
+        .trim(),
 
-case_number:
-document
-.getElementById("f_case_number")
-.value
-.trim(),
+        case_number:
+        document
+        .getElementById("f_case_number")
+        .value
+        .trim(),
 
-client_name:
-document
-.getElementById("f_client_name")
-.value
-.trim(),
+        client_name:
+        document
+        .getElementById("f_client_name")
+        .value
+        .trim(),
 
-status:
-document
-.getElementById("f_status")
-.value
+        status:
+        document
+        .getElementById("f_status")
+        .value
 
-});
-
-
-if(error){
-
-showModalError(
-error.message
-);
-
-return;
-
-}
+    });
 
 
-closeModal();
+    if(error){
 
-loadCases();
+        showModalError(
+            error.message
+        );
 
-loadDashboard();
+        return;
+
+    }
+
+
+    closeModal();
+
+    loadCases();
+
+    loadDashboard();
 
 }
 
 
 /* =====================================================
-SAVE APPOINTMENT
+   SAVE APPOINTMENT
 ===================================================== */
 
 async function saveAppointment(){
 
-const {error} =
-await supabaseClient
-.from("appointments")
-.insert({
+    const {error} =
+    await supabaseClient
+    .from("appointments")
+    .insert({
 
-client_name:
-document
-.getElementById("f_client_name")
-.value
-.trim(),
+        client_name:
+        document
+        .getElementById("f_client_name")
+        .value
+        .trim(),
 
-date:
-document
-.getElementById("f_date")
-.value,
+        date:
+        document
+        .getElementById("f_date")
+        .value,
 
-time:
-document
-.getElementById("f_time")
-.value,
+        time:
+        document
+        .getElementById("f_time")
+        .value,
 
-status:
-document
-.getElementById("f_status")
-.value
+        status:
+        document
+        .getElementById("f_status")
+        .value
 
-});
-
-
-if(error){
-
-showModalError(
-error.message
-);
-
-return;
-
-}
+    });
 
 
-closeModal();
+    if(error){
 
-loadAppointments();
+        showModalError(
+            error.message
+        );
 
-loadDashboard();
+        return;
+
+    }
+
+
+    closeModal();
+
+    loadAppointments();
+
+    loadDashboard();
 
 }
 
 
 /* =====================================================
-SAVE CONSULTATION
+   SAVE CONSULTATION
 ===================================================== */
 
 async function saveConsultation(){
 
-const {error} =
-await supabaseClient
-.from("consultations")
-.insert({
+    const {error} =
+    await supabaseClient
+    .from("consultations")
+    .insert({
 
-client_name:
-document
-.getElementById("f_client_name")
-.value
-.trim(),
+        client_name:
+        document
+        .getElementById("f_client_name")
+        .value
+        .trim(),
 
-subject:
-document
-.getElementById("f_subject")
-.value
-.trim(),
+        subject:
+        document
+        .getElementById("f_subject")
+        .value
+        .trim(),
 
-date:
-document
-.getElementById("f_date")
-.value,
+        date:
+        document
+        .getElementById("f_date")
+        .value,
 
-status:
-document
-.getElementById("f_status")
-.value,
+        status:
+        document
+        .getElementById("f_status")
+        .value,
 
-notes:
-document
-.getElementById("f_notes")
-.value
-.trim()
+        notes:
+        document
+        .getElementById("f_notes")
+        .value
+        .trim()
 
-});
-
-
-if(error){
-
-showModalError(
-error.message
-);
-
-return;
-
-}
+    });
 
 
-closeModal();
+    if(error){
 
-loadConsultations();
+        showModalError(
+            error.message
+        );
 
-loadDashboard();
+        return;
+
+    }
+
+
+    closeModal();
+
+    loadConsultations();
+
+    loadDashboard();
 
 }
 
 
 /* =====================================================
-UPLOAD LEGAL DOCUMENT
+   SAVE DOCUMENT
 ===================================================== */
 
 async function saveDocument(){
 
-const message =
-document
-.getElementById("modalMessage");
+    const message =
+    document.getElementById(
+        "modalMessage"
+    );
 
 
-const name =
-document
-.getElementById("f_name")
-.value
-.trim();
+    const name =
+    document
+    .getElementById("f_name")
+    .value
+    .trim();
 
 
-const clientName =
-document
-.getElementById("f_client_name")
-.value
-.trim();
+    const clientName =
+    document
+    .getElementById("f_client_name")
+    .value
+    .trim();
 
 
-const file =
-document
-.getElementById("f_file")
-.files[0];
+    const fileInput =
+    document.getElementById(
+        "f_file"
+    );
 
 
-if(!name){
+    const file =
+    fileInput.files[0];
 
-showModalError(
-"Please enter document name."
-);
 
-return;
+    /* ================= VALIDATION ================= */
 
-}
+    if(!name){
 
+        showModalError(
+            "Please enter document name."
+        );
 
-if(!clientName){
+        return;
 
-showModalError(
-"Please enter client name."
-);
+    }
 
-return;
 
-}
+    if(!clientName){
 
+        showModalError(
+            "Please enter client name."
+        );
 
-if(!file){
+        return;
 
-showModalError(
-"Please select a document."
-);
+    }
 
-return;
 
-}
+    if(!file){
 
+        showModalError(
+            "Please select a document."
+        );
 
-/* MAXIMUM 10 MB */
+        return;
 
-if(
-file.size >
-10 * 1024 * 1024
-){
+    }
 
-showModalError(
-"File is larger than 10 MB."
-);
 
-return;
+    /* ================= SIZE ================= */
 
-}
+    if(
+        file.size >
+        10 * 1024 * 1024
+    ){
 
+        showModalError(
+            "File size must not exceed 10 MB."
+        );
 
-/* ALLOWED FILE TYPES */
+        return;
 
-const allowedTypes = [
+    }
 
-"application/pdf",
 
-"image/jpeg",
+    /* ================= TYPE ================= */
 
-"image/png",
+    const allowedTypes = [
 
-"application/msword",
+        "application/pdf",
 
-"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        "image/jpeg",
 
-];
+        "image/png",
 
+        "application/msword",
 
-if(
-!allowedTypes.includes(
-file.type
-)
-){
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
-showModalError(
-"File type is not allowed."
-);
+    ];
 
-return;
 
-}
+    const allowedExtensions = [
 
+        "pdf",
+        "jpg",
+        "jpeg",
+        "png",
+        "doc",
+        "docx"
 
-try{
+    ];
 
-message.className =
-"message success";
 
-message.style.display =
-"block";
+    const extension =
+    file.name
+    .split(".")
+    .pop()
+    .toLowerCase();
 
-message.textContent =
-"Uploading document...";
 
+    if(
+        !allowedTypes.includes(file.type) &&
+        !allowedExtensions.includes(extension)
+    ){
 
-/* CHECK LOGIN */
+        showModalError(
+            "Only PDF, JPG, JPEG, PNG, DOC and DOCX files are allowed."
+        );
 
-const {data:userData,error:userError} =
-await supabaseClient.auth
-.getUser();
+        return;
 
+    }
 
-if(
-userError ||
-!userData.user
-){
 
-throw new Error(
-"Login session expired. Please login again."
-);
+    try{
 
-}
+        message.className =
+        "message success";
 
+        message.style.display =
+        "block";
 
-const userId =
-userData.user.id;
+        message.textContent =
+        "Uploading document...";
 
 
-/*
-Create safe filename
-*/
+        /* =================================================
+           UNIQUE FILE PATH
+        ================================================= */
 
-const safeName =
-file.name
-.replace(
-/[^a-zA-Z0-9._-]/g,
-"_"
-);
+        const safeClient =
+        clientName
+        .replace(
+            /[^a-zA-Z0-9-_]/g,
+            "_"
+        );
 
 
-/*
-Private storage path
-*/
+        const safeName =
+        name
+        .replace(
+            /[^a-zA-Z0-9-_]/g,
+            "_"
+        );
 
-const filePath =
-userId +
-"/" +
-Date.now() +
-"_" +
-safeName;
 
+        const uniqueName =
+        Date.now() +
+        "_" +
+        Math.random()
+        .toString(36)
+        .substring(2,10) +
+        "." +
+        extension;
 
-/*
-UPLOAD TO SUPABASE STORAGE
-*/
 
-const {error:uploadError} =
-await supabaseClient
-.storage
-.from(STORAGE_BUCKET)
-.upload(
-filePath,
-file,
-{
-cacheControl:"3600",
-upsert:false,
-contentType:file.type
-}
-);
+        const filePath =
+        safeClient +
+        "/" +
+        safeName +
+        "_" +
+        uniqueName;
 
 
-if(uploadError){
+        console.log(
+            "Uploading to bucket:",
+            DOCUMENT_BUCKET
+        );
 
-throw new Error(
-"File upload failed: " +
-uploadError.message
-);
 
-}
+        console.log(
+            "File path:",
+            filePath
+        );
 
 
-/*
-SAVE FILE PATH IN DOCUMENTS TABLE
+        /* =================================================
+           UPLOAD TO STORAGE
+        ================================================= */
 
-We use the existing "url" column
-to store the private storage path.
-*/
+        const {
+            data:uploadData,
+            error:uploadError
+        } =
+        await supabaseClient
+        .storage
+        .from(DOCUMENT_BUCKET)
+        .upload(
+            filePath,
+            file,
+            {
 
-const {error:dbError} =
-await supabaseClient
-.from("documents")
-.insert({
+                cacheControl:"3600",
 
-name:name,
+                upsert:false,
 
-client_name:clientName,
+                contentType:
+                file.type ||
+                "application/octet-stream"
 
-url:filePath
+            }
+        );
 
-});
 
+        if(uploadError){
 
-if(dbError){
+            console.error(
+                "Storage upload error:",
+                uploadError
+            );
 
-/*
-If database fails,
-remove uploaded file.
-*/
 
-await supabaseClient
-.storage
-.from(STORAGE_BUCKET)
-.remove([
-filePath
-]);
+            showModalError(
+                "File upload failed: " +
+                uploadError.message
+            );
 
-throw new Error(
-"File uploaded but database save failed: " +
-dbError.message
-);
+            return;
 
-}
+        }
 
 
-closeModal();
+        /* =================================================
+           SAVE PATH IN DATABASE
+        ================================================= */
 
-loadDocuments();
+        const {
+            error:dbError
+        } =
+        await supabaseClient
+        .from("documents")
+        .insert({
 
-alert(
-"Legal document uploaded successfully."
-);
+            name:name,
 
+            client_name:clientName,
 
-}catch(error){
+            url:uploadData.path
 
-showModalError(
-error.message ||
-"File upload failed."
-);
+        });
 
-}
 
-}
+        if(dbError){
 
+            console.error(
+                "Database error:",
+                dbError
+            );
 
-/* =====================================================
-OPEN PRIVATE DOCUMENT
-===================================================== */
 
-async function openDocument(filePath){
+            /* Remove orphan file */
 
-if(!filePath){
+            await supabaseClient
+            .storage
+            .from(DOCUMENT_BUCKET)
+            .remove([
+                uploadData.path
+            ]);
 
-alert(
-"Document path not found."
-);
 
-return;
+            showModalError(
+                "Document database save failed: " +
+                dbError.message
+            );
 
-}
+            return;
 
+        }
 
-try{
 
-const {data,error} =
-await supabaseClient
-.storage
-.from(STORAGE_BUCKET)
-.createSignedUrl(
-filePath,
-3600
-);
+        /* =================================================
+           SUCCESS
+        ================================================= */
 
+        message.className =
+        "message success";
 
-if(error){
+        message.style.display =
+        "block";
 
-alert(
-"Unable to open document: " +
-error.message
-);
+        message.textContent =
+        "Document uploaded and saved successfully.";
 
-return;
 
-}
+        setTimeout(
+        function(){
 
+            closeModal();
 
-if(data &&
-data.signedUrl){
+            loadDocuments();
 
-window.open(
-data.signedUrl,
-"_blank"
-);
+            loadDashboard();
 
-}else{
+        },
+        1000
+        );
 
-alert(
-"Document URL could not be generated."
-);
 
-}
+    }catch(error){
 
-}catch(error){
+        console.error(
+            "Upload exception:",
+            error
+        );
 
-alert(
-"Unable to open document."
-);
 
-}
+        showModalError(
+            "Upload failed: " +
+            error.message
+        );
 
-}
-
-
-/* =====================================================
-DELETE DOCUMENT
-===================================================== */
-
-async function deleteDocument(
-id,
-filePath
-){
-
-if(
-!confirm(
-"Are you sure you want to permanently delete this document?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-
-/*
-Delete physical file
-*/
-
-if(filePath){
-
-const {error:fileError} =
-await supabaseClient
-.storage
-.from(STORAGE_BUCKET)
-.remove([
-filePath
-]);
-
-
-if(fileError){
-
-alert(
-"File deletion failed: " +
-fileError.message
-);
-
-return;
-
-}
-
-}
-
-
-/*
-Delete database record
-*/
-
-const {error:dbError} =
-await supabaseClient
-.from("documents")
-.delete()
-.eq("id",id);
-
-
-if(dbError){
-
-alert(
-"Database deletion failed: " +
-dbError.message
-);
-
-return;
-
-}
-
-
-loadDocuments();
-
-
-}catch(error){
-
-alert(
-"Delete failed."
-);
-
-}
+    }
 
 }
 
 
 /* =====================================================
-DELETE NORMAL RECORD
+   DELETE
 ===================================================== */
 
 async function deleteRow(
-table,
-id,
-page
+    table,
+    id,
+    page
 ){
 
-if(
-!confirm(
-"Are you sure you want to delete this record?"
-)
-){
+    if(
+        !confirm(
+            "Are you sure you want to delete this record?"
+        )
+    ){
 
-return;
+        return;
 
-}
-
-
-const {error} =
-await supabaseClient
-.from(table)
-.delete()
-.eq("id",id);
+    }
 
 
-if(error){
+    /*
+     Special handling for documents:
+     first get the file path.
+    */
 
-alert(
-"Delete failed: " +
-error.message
-);
+    if(table === "documents"){
 
-return;
+        const {
+            data:document,
+            error:findError
+        } =
+        await supabaseClient
+        .from("documents")
+        .select("url")
+        .eq("id",id)
+        .maybeSingle();
 
-}
+
+        if(findError){
+
+            alert(
+                "Unable to find document: " +
+                findError.message
+            );
+
+            return;
+
+        }
 
 
-if(page==="clients")
-loadClients();
+        const {
+            error:deleteError
+        } =
+        await supabaseClient
+        .from("documents")
+        .delete()
+        .eq("id",id);
 
-if(page==="cases")
-loadCases();
 
-if(page==="appointments")
-loadAppointments();
+        if(deleteError){
 
-if(page==="consultations")
-loadConsultations();
+            alert(
+                "Delete failed: " +
+                deleteError.message
+            );
 
-if(page==="documents")
-loadDocuments();
+            return;
 
-loadDashboard();
+        }
+
+
+        if(
+            document &&
+            document.url
+        ){
+
+            const {
+                error:storageError
+            } =
+            await supabaseClient
+            .storage
+            .from(DOCUMENT_BUCKET)
+            .remove([
+                document.url
+            ]);
+
+
+            if(storageError){
+
+                console.error(
+                    "Storage delete error:",
+                    storageError
+                );
+
+            }
+
+        }
+
+
+        loadDocuments();
+
+        loadDashboard();
+
+        return;
+
+    }
+
+
+    /* ================= NORMAL TABLE DELETE ================= */
+
+    const {error} =
+    await supabaseClient
+    .from(table)
+    .delete()
+    .eq("id",id);
+
+
+    if(error){
+
+        alert(
+            "Delete failed: " +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    if(page === "clients")
+        loadClients();
+
+    if(page === "cases")
+        loadCases();
+
+    if(page === "appointments")
+        loadAppointments();
+
+    if(page === "consultations")
+        loadConsultations();
+
+    if(page === "documents")
+        loadDocuments();
+
+
+    loadDashboard();
 
 }
 
 
 /* =====================================================
-MODAL ERROR
+   MODAL ERROR
 ===================================================== */
 
 function showModalError(text){
 
-const message =
-document
-.getElementById("modalMessage");
+    const message =
+    document.getElementById(
+        "modalMessage"
+    );
 
 
-message.className =
-"message error";
+    message.className =
+    "message error";
 
 
-message.style.display =
-"block";
+    message.style.display =
+    "block";
 
 
-message.textContent =
-text;
+    message.textContent =
+    text;
 
 }
 
 
 /* =====================================================
-SECURITY HELPERS
+   SECURITY HELPERS
 ===================================================== */
 
 function escapeHTML(value){
 
-return String(value)
+    return String(value)
 
-.replace(
-/&/g,
-"&amp;"
-)
+    .replace(
+        /&/g,
+        "&amp;"
+    )
 
-.replace(
-/</g,
-"&lt;"
-)
+    .replace(
+        /</g,
+        "&lt;"
+    )
 
-.replace(
-/>/g,
-"&gt;"
-)
+    .replace(
+        />/g,
+        "&gt;"
+    )
 
-.replace(
-/"/g,
-"&quot;"
-)
+    .replace(
+        /"/g,
+        "&quot;"
+    )
 
-.replace(
-/'/g,
-"&#039;"
-);
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 
 }
 
 
 function escapeAttribute(value){
 
-return String(value)
+    return String(value)
 
-.replace(
-/&/g,
-"&amp;"
-)
+    .replace(
+        /"/g,
+        "%22"
+    )
 
-.replace(
-/"/g,
-"&quot;"
-)
+    .replace(
+        "<",
+        "%3C"
+    )
 
-.replace(
-/'/g,
-"&#039;"
-)
-
-.replace(
-/</g,
-"&lt;"
-)
-
-.replace(
-/>/g,
-"&gt;"
-);
+    .replace(
+        ">",
+        "%3E"
+    );
 
 }
 
 
 /* =====================================================
-CLOSE MODAL OUTSIDE CLICK
+   CLOSE MODAL OUTSIDE CLICK
 ===================================================== */
 
 document
@@ -3445,15 +3710,14 @@ document
 "click",
 function(e){
 
-if(
-e.target===this
-){
+    if(e.target === this){
 
-closeModal();
+        closeModal();
 
-}
+    }
 
 });
+
 
 </script>
 
